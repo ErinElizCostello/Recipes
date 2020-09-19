@@ -26,12 +26,13 @@ const ShowHideSelect = (props) => {
   };
 
   const notChecked = () => {
-    dispatch(theInfo.actions.delete("Skip"))
+    dispatch(theInfo.actions.delete([]))
+    // dispatch(theInfo.actions.delete(["Skip"]))
   }
 
-  const automaticDisp = () => {
-    dispatch(info.actions.add("Skip"))
-  }
+  // const automaticDisp = () => {
+  //   dispatch(info.actions.add(["Skip"]))
+  // }
 
   return (
     <div>
@@ -47,8 +48,11 @@ const ShowHideSelect = (props) => {
         label={info.label}
       />
 
-      {checked ? <SelectForm info={info} /> : notChecked()}
-      {checked ? automaticDisp() : null}
+      {checked ? 
+      // dispatch(theInfo.actions.delete([])) &&
+
+      <SelectForm info={info} /> : notChecked()}
+      {/* {checked ? automaticDisp() : null} */}
     </div>
   )
 }

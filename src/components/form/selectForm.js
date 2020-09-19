@@ -62,8 +62,11 @@ const SelectForm = (props) => {
       theItem: event.target.value
     }))
 
-    select.item = ''
+    setSelect({})
   }
+
+  // const reset = () => setSelect({})
+
 
   const onDelete = id => {
     const update = datReducer.filter(e => e.id !== id)
@@ -90,7 +93,7 @@ const SelectForm = (props) => {
           {menuItem.map(e => <MenuItem value={e} >{e}</MenuItem>)}
         </Select>
         <div>
-          {datReducer.map(e => e.theItem !== "Skip" ?
+          {datReducer.map(e => e !== "Skip" ?
             <div key={e.id}>
               <Chip
                 label={
