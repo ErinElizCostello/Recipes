@@ -5,6 +5,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 import SliderForm from './sliderForm'
+import TimeSlider from './timeSlider'
 
 
 
@@ -18,6 +19,7 @@ const ShowHideSlider = (props) => {
   const minimumValue = props.e.minimum
   const maximumValue = props.e.maximum
   const label = props.e.checkBoxLabel
+
 
   const [checked, setChecked] = useState(false);
 
@@ -46,8 +48,8 @@ const ShowHideSlider = (props) => {
         }
         label={label}
       />
-
-      {checked ? <SliderForm theInfo={info} /> : notChecked()}
+      {checked && label === "Add a maximum ready time" ? <TimeSlider /> :
+        checked ? <SliderForm theInfo={info} /> : notChecked()}
       {checked ? automaticDisp() : null}
     </div>
   )

@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
 
-import { deleteMaximumReadyTime } from '../../actions/maximumReadyTime'
+import { deleteMaximumReadyTime } from '../actions/maximumReadyTime'
 
 
 const TimeSliderDisabled = () => {

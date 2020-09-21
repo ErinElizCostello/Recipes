@@ -10,7 +10,22 @@ import { mealTypeList, deleteMealType, clearMealType } from '../../actions/mealT
 
 import { alcohol, deleteAlcohol, caffeine, deleteCaffeine, calories, deleteCalories, carbs, deleteCarbs, copper, deleteCopper, calcium, deleteCalcium, choline, deleteCholine, cholesterol, deleteCholesterol, fat, deleteFat, fiber, deleteFiber, fluoride, deletefluoride, saturatedFat, deleteSaturatedFat, folate, deleteFolate, folicAcid, deleteFolicAcid, iodine, deleteIodine, iron, deleteIron, magnesium, deleteMagnesium, manganese, deleteManganese, phosphorus, deletePhosphorus, potassium, deletePotassium, protein, deleteProtein, selenium, deleteSelenium, sodium, deleteSodium, sugar, deleteSugar, zinc, deleteZinc, vitaminA, deleteVitaminA, vitaminC, deleteVitaminC, vitaminD, deleteVitaminD, vitaminE, deleteVitaminE, vitaminK, deleteVitaminK, vitaminB1, deleteVitaminB1, vitaminB2, deleteVitaminB2, vitaminB3, deleteVitaminB3, vitaminB5, deleteVitaminB5, vitaminB6, deleteVitaminB6, vitaminB12, deleteVitaminB12 } from '../../actions/sliderActions'
 
+import { aMaximumReadyTime, deleteMaximumReadyTime } from '../../actions/maximumReadyTime'
+
+// import { numberOfResults, deleteNumberOfResults, clearNumberOf}
+
 const zeDietTypes = 'theDietTypes'
+
+export const ingredientsInformation = [
+  {
+    stuff: {
+      label: 'N/A',
+      actions: { add: 'N/A', delete: 'N/A', clear: 'N/A' },
+      reducerName: 'N/A',
+      menuItem: 'N/A'
+    }
+  }
+]
 
 export const selectInformation = [
   {
@@ -47,9 +62,35 @@ export const selectInformation = [
       reducerName: 'd',
       menuItem: ['main course', 'side dish', 'dessert', 'appetizer', 'salad', 'bread', 'breakfast', 'soup', 'beverage', 'sauce', 'marinade', 'fingerfood', 'snack', 'drink']
     }
-  }
+  },
+  // stuff: {
+  //   label: 'How many results would you like to see?',
+  //   actions: { add: dietTypeList, delete: deleteDiet, clear: clearDiet },
+  //   reducerName: 'a',
+  //   menuItem: ['Gluten Free', 'Ketogenic', 'Vegetarian', 'Lacto-Vegetarian', 'Ovo-Vegetarian', 'Vegan', 'Pescetarian', 'Paleo', 'Primal', 'Whole30']
+  // }
 ]
 
+export const timeSliderInformation = [
+  {
+  checkBoxLabel: "Add a maximum ready time",
+    actionName: aMaximumReadyTime,
+    deleteAction: deleteMaximumReadyTime,
+    sliderLabel: 'Maximum minutes to prepare',
+    marks: [
+      {
+        value: 0,
+        label: '0'
+      },
+      {
+        value: 120,
+        label: '120'
+      }
+    ],
+    minimum: 0,
+    maximum: 120
+  },
+]
 
 export const sliderInformation = [
   {

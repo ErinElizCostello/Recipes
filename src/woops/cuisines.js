@@ -9,7 +9,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 
-import { cuisineList, deleteCuisine, clearList } from '../../actions/cuisines'
+import { cuisineList, deleteCuisine, clearList } from '../actions/cuisines'
 
 
 

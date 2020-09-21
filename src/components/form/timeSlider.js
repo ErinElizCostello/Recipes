@@ -28,11 +28,15 @@ const marks = [
     value: 60,
     label: '1 hour',
   },
+  {
+    value: 120,
+    label: '2 hours',
+  },
 ];
 
 
 
-const TimeSliderOn = () => {
+const TimeSlider = () => {
 
   const classes = useStyles();
   const dispatch = useDispatch()
@@ -54,10 +58,10 @@ const TimeSliderOn = () => {
         marks={marks}
         valueLabelDisplay="on"
         min={15}
-        max={60}
+        max={120}
       />
     </div>
   )
 }
 
-export default TimeSliderOn
+export default TimeSlider

@@ -19,14 +19,16 @@ const Ingredients = () => {
 
   const addToList = (item, thing) => {
 
-    if (heresAList === "Skip") {
-      dispatch(clearList([]))
-    }
+    // if (heresAList === "Skip") {
+    //   dispatch(clearList([]))
+    // }
+    
 
     dispatch(theList({
       id: Math.random(),
       [item]: thing,
-    }))
+    }));
+
     value.item = '';
   }
 
@@ -38,7 +40,8 @@ const Ingredients = () => {
   return (
     <div>
       <div>
-        {Array.isArray(heresAList) ? heresAList.map(e =>
+        {Array.isArray(heresAList) && heresAList.length !== 0 ? heresAList.map(e =>
+          
           <div key={e.id}>
             <Chip
               label={e.item}
