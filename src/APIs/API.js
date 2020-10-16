@@ -17,6 +17,20 @@ export const fetchRecipes = (ingredientsList) => {
         throw (recipe.error);
       }
 
-      console.log(recipe)
+      // console.log(recipe)
     })
+}
+
+export let autoIngredients = []
+
+export const ingredientsAutocomplete = (parameters) => {
+  return fetch(`https://api.spoonacular.com/food/ingredients/autocomplete?apiKey=${API_KEY}&query=${parameters}&number=10`)
+    .then(res => res.json())
+    // .then(recipe => {
+    //   if (recipe.error) {
+    //     throw (recipe.error);
+    //   }
+    //   console.log(recipe)
+    //   dispatch(autoComp(recipe))
+    // })
 }
