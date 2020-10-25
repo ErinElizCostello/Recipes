@@ -6,6 +6,7 @@ import TimeSlider from './timeSlider'
 import { sliderInformation, sliderInformationVitamins, timeSliderInformation, selectInformation, ingredientsInformation } from './formInformation'
 import AddNutritionCheck from './addNutritionCheck'
 import AddVitaminCheck from './addVitaminCheck'
+import Submit from './submit'
 const ShowHideContainer = () => {
 
 
@@ -16,6 +17,7 @@ const ShowHideContainer = () => {
       {selectInformation.map(e => <ShowHideSelect e={e} />)}
       <AddNutritionCheck />
       <AddVitaminCheck />
+      <Submit />
       {/* {sliderInformation.map(e => <ShowHideSlider e={e} />)} */}
       {/* {sliderInformationVitamins.map(e => <ShowHideSlider e={e} />)} */}
     </div>

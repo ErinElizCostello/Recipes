@@ -28,7 +28,7 @@ const ShowHideSlider = (props) => {
   };
 
   const notChecked = () => {
-    dispatch(deleteAction("Skip"))
+    dispatch(deleteAction([]))
   }
 
   const automaticDisp = () => {

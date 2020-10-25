@@ -1,8 +1,3 @@
-// import { calories, deleteCalories } from '../../actions/calories';
-// import { carbs, deleteCarbs } from '../../actions/carbs';
-// import { fiber, deleteFiber } from '../../actions/fiber';
-// import { protein, deleteProtein } from '../../actions/protein'
-// import { sugar, deleteSugar } from '../../actions/sugar'
 import { dietTypeList, deleteDiet, clearDiet } from '../../actions/dietType'
 import { cuisineList, deleteCuisine, clearCuisine } from '../../actions/cuisines'
 import { intolerancesList, deleteIntolerance, clearIntolerances } from '../../actions/intolerances'
@@ -63,12 +58,6 @@ export const selectInformation = [
       menuItem: ['main course', 'side dish', 'dessert', 'appetizer', 'salad', 'bread', 'breakfast', 'soup', 'beverage', 'sauce', 'marinade', 'fingerfood', 'snack', 'drink']
     }
   },
-  // stuff: {
-  //   label: 'How many results would you like to see?',
-  //   actions: { add: dietTypeList, delete: deleteDiet, clear: clearDiet },
-  //   reducerName: 'a',
-  //   menuItem: ['Gluten Free', 'Ketogenic', 'Vegetarian', 'Lacto-Vegetarian', 'Ovo-Vegetarian', 'Vegan', 'Pescetarian', 'Paleo', 'Primal', 'Whole30']
-  // }
 ]
 
 export const timeSliderInformation = [
