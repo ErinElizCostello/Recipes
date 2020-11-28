@@ -8,7 +8,7 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-
+import { dietTypeList } from '../../actions/dietType';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
 const SelectForm = (props) => {
 
   const classes = useStyles();
@@ -41,7 +40,12 @@ const SelectForm = (props) => {
   const intolerances = useSelector(state => state.intolerances)
   const mealType = useSelector(state => state.mealType)
 
-  const leReducers = { a: theDietTypes, b: cuisines, c: intolerances, d: mealType }
+  const leReducers = {
+    a: theDietTypes,
+    b: cuisines,
+    c: intolerances,
+    d: mealType
+  }
 
   const addAction = props.info.actions.add
   const deleteAction = props.info.actions.delete
@@ -49,7 +53,14 @@ const SelectForm = (props) => {
   const menuItem = props.info.menuItem
   const reducerName = props.info.reducerName
   const datReducer = leReducers[Object.keys(leReducers).filter(e => e === reducerName)]
-  
+  console.log(datReducer)
+  // let redu = leReducers[reducerName]
+
+  // let lastDiet = theDietTypes.filter(e => e === theDietTypes[theDietTypes.length - 1])
+
+  // let lastMeal = mealType.filter(e => e === mealType[mealType.length - 1])
+
+
   const [select, setSelect] = useState({})
 
   // console.log(menuItem)
@@ -93,17 +104,45 @@ const SelectForm = (props) => {
           {menuItem.map(e => <MenuItem value={e} >{e}</MenuItem>)}
         </Select>
         <div>
-          {datReducer.map(e => e !== "Skip" ?
-            <div key={e.id}>
+          {
+            reducerName === 'a' && theDietTypes.length !== 0 ?
               <Chip
-                label={
-                  e.theItem === "GlutenFree" ? e.theItem = "Gluten Free" : e.theItem}
-                onDelete={() => onDelete(e.id)}
+                label={theDietTypes.theItem}
+                onDelete={() => onDelete(theDietTypes.id)}
                 color="primary"
               />
-            </div>
-            : null
-          )}
+              :
+              null
+          }
+          {
+            reducerName === 'd' && mealType.length !== 0 ?
+              <Chip
+                label={mealType.theItem}
+                onDelete={() => onDelete(mealType.id)}
+                color="primary"
+              />
+              :
+              null
+          }
+        </div>
+        <div>
+          {
+            reducerName !== 'a' && reducerName !== 'd'
+              ?
+              datReducer.map(e =>
+
+                <div key={e.id}>
+                  <Chip
+                    label={
+                      e.theItem === "GlutenFree" ? e.theItem = "Gluten Free" : e.theItem}
+                    onDelete={() => onDelete(e.id)}
+                    color="primary"
+                  />
+                </div>
+
+              )
+              : null
+          }
         </div>
         <Button
           variant="contained"
@@ -134,3 +173,23 @@ export default SelectForm
 
   // const theLetter = letter.filter(e => e === reducerName)
   // const datReducer = leReducers[letter]
+
+
+
+
+
+  // -------
+
+  // <div>
+  //         {datReducer.map(e => e !== "Skip" ?
+  //           <div key={e.id}>
+  //             <Chip
+  //               label={
+  //                 e.theItem === "GlutenFree" ? e.theItem = "Gluten Free" : e.theItem}
+  //               onDelete={() => onDelete(e.id)}
+  //               color="primary"
+  //             />
+  //           </div>
+  //           : null
+  //         )}
+  //       </div>

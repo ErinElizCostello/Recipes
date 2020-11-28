@@ -1,4 +1,7 @@
 export const cuisineList = ( listValues ) => {
+  // [...new Set(listValues)]
+  // let theList = new Set (listValues)
+  // console.log(theList)
   return({
     type: 'SET_CUISINE',
     data: listValues

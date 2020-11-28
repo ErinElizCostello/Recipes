@@ -11,8 +11,9 @@ import { maximumReadyTime } from './maximumReadyTime'
 // import { calories } from './calories'
 // import { sugar } from './sugar'
 // import { fiber } from './fiber'
-import { alcohol, caffeine, calories, carbs, copper, calcium, choline, cholesterol, fat, fiber, fluoride, saturatedFat, folate, folicAcid, iodine, iron, magnesium, manganese, phosphorus, potassium, protein, selenium, sodium, sugar, zinc, vitaminA, vitaminC, vitaminD, vitaminE, vitaminK, vitaminB1, vitaminB2, vitaminB3, vitaminB5, vitaminB6, vitaminB12 } from './sliderReducers'
+import { sliders, alcohol, caffeine, calories, carbs, copper, calcium, choline, cholesterol, fat, fiber, fluoride, saturatedFat, folate, folicAcid, iodine, iron, magnesium, manganese, phosphorus, potassium, protein, selenium, sodium, sugar, zinc, vitaminA, vitaminC, vitaminD, vitaminE, vitaminK, vitaminB1, vitaminB2, vitaminB3, vitaminB5, vitaminB6, vitaminB12 } from './sliderReducers'
 import { ACReducer } from './autoComplete'
+import {genSearch} from './genSearch'
 
 const rootReducer = combineReducers({
   recipeReducer,
@@ -23,12 +24,14 @@ const rootReducer = combineReducers({
   mealType,
   maximumReadyTime,
   ACReducer,
+  genSearch,
+  sliders,
   // protein,
   // carbs,
   // calories,
   // sugar,
   // fiber
-  alcohol, caffeine, calories, carbs, copper, calcium, choline, cholesterol, fat, fiber, fluoride, saturatedFat, folate, folicAcid, iodine, iron, magnesium, manganese, phosphorus, potassium, protein, selenium, sodium, sugar, zinc, vitaminA, vitaminC, vitaminD, vitaminE, vitaminK, vitaminB1, vitaminB2, vitaminB3, vitaminB5, vitaminB6, vitaminB12
+  // alcohol, caffeine, calories, carbs, copper, calcium, choline, cholesterol, fat, fiber, fluoride, saturatedFat, folate, folicAcid, iodine, iron, magnesium, manganese, phosphorus, potassium, protein, selenium, sodium, sugar, zinc, vitaminA, vitaminC, vitaminD, vitaminE, vitaminK, vitaminB1, vitaminB2, vitaminB3, vitaminB5, vitaminB6, vitaminB12
 });
 
 export default rootReducer

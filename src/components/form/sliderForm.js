@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
-
+import {sliders, slidersDelete} from '../../actions/sliderActions'
 
 const useStyles = makeStyles({
   root: {
@@ -21,6 +21,7 @@ const SliderForm = (props) => {
   let theAction = props.theInfo.actionName
   let minMax = {min: props.theInfo.minimum, max: props.theInfo.maximum}
   let sliderLabel = props.theInfo.sliderLabel
+  let what = props.theInfo.checkBoxLabel
   let marks = props.theInfo.marks
 
   const [value, setValue] = React.useState([minMax.min, minMax.max]);
@@ -28,7 +29,8 @@ const SliderForm = (props) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
     console.log(minMax)
-    dispatch(theAction(newValue));
+    dispatch(sliders(newValue, what))
+    // dispatch(theAction(newValue, sliderLabel));
   };
 
   return (

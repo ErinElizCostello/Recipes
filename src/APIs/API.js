@@ -9,8 +9,7 @@ export const fetchRecipe = (ingredientsList) => {
 }
 
 export const fetchRecipes = (ingredientsList) => {
-  return fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=cheese&instructionsRequired=true&addRecipeInformation=true&addRecipeNutrition=true&
-  number=10`)
+  return fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&instructionsRequired=true&addRecipeInformation=true&addRecipeNutrition=true&number=10${ingredientsList}`)
     .then(res => res.json())
     .then(recipe => {
       if (recipe.error) {

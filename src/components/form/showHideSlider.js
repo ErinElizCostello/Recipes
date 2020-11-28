@@ -6,7 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 import SliderForm from './sliderForm'
 import TimeSlider from './timeSlider'
-
+import {sliders, slidersDelete} from '../../actions/sliderActions'
 
 
 const ShowHideSlider = (props) => {
@@ -28,11 +28,13 @@ const ShowHideSlider = (props) => {
   };
 
   const notChecked = () => {
-    dispatch(deleteAction([]))
+    dispatch(slidersDelete(label))
+    // dispatch(deleteAction([]))
   }
 
   const automaticDisp = () => {
-    dispatch(theAction([minimumValue, maximumValue]))
+    dispatch(sliders([minimumValue, maximumValue], label))
+    // dispatch(theAction([minimumValue, maximumValue]))
   }
 
   return (
