@@ -53,31 +53,28 @@ const SelectForm = (props) => {
   const menuItem = props.info.menuItem
   const reducerName = props.info.reducerName
   const datReducer = leReducers[Object.keys(leReducers).filter(e => e === reducerName)]
-  console.log(datReducer)
-  // let redu = leReducers[reducerName]
-
-  // let lastDiet = theDietTypes.filter(e => e === theDietTypes[theDietTypes.length - 1])
-
-  // let lastMeal = mealType.filter(e => e === mealType[mealType.length - 1])
-
-
+  
   const [select, setSelect] = useState({})
 
-  // console.log(menuItem)
-
   const onSelect = (event) => {
+
     setSelect({ item: event.target.value })
 
-    dispatch(addAction({
-      id: Math.random(),
-      theItem: event.target.value
-    }))
+    let it = event.target.value
+    let isIt = false
+
+    if (reducerName === 'b') { cuisines.forEach(e => e.theItem === it ? isIt = true : null)}
+    if (reducerName === 'c') { intolerances.forEach(e => e.theItem === it ? isIt = true : null)}
+
+    if(!isIt) {
+      dispatch(addAction({
+        id: Math.random(),
+        theItem: event.target.value
+      }))
+    }
 
     setSelect({})
   }
-
-  // const reset = () => setSelect({})
-
 
   const onDelete = id => {
     const update = datReducer.filter(e => e.id !== id)
@@ -88,7 +85,6 @@ const SelectForm = (props) => {
     dispatch(clearAction([]))
     select.item = ''
   }
-
 
   return (
     <div>
