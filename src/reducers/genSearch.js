@@ -1,11 +1,11 @@
 export const genSearch = (state = [], action) => {
   switch (action.type) {
     case 'SET_GEN_SEARCH':
-      return [...state, action.data];
+      return action.data;
     case 'DELETE_GEN_SEARCH_ITEM':
-      return [...action.data]
+      return action.data
     case 'CLEAR_GEN_SEARCH_LIST':
-      return [...action.data]
+      return action.data
     case 'TOGGLE_GEN_SEARCH_LIST':
       return action.data
     default:

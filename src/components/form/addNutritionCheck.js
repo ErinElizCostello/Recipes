@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+// import { useDispatch, useSelector } from 'react-redux'
 
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -7,11 +7,15 @@ import ShowHideSlider from './showHideSlider'
 // import SelectForm from './selectForm'
 // import Ingredients from './ingredients'
 // import { theList, deleteItem, clearList } from '../../actions/list'
-import { sliderInformation, sliderInformationVitamins, timeSliderInformation, selectInformation, ingredientsInformation } from './formInformation'
+import { sliderInformation, 
+  // sliderInformationVitamins, timeSliderInformation, selectInformation, ingredientsInformation 
+} from './formInformation'
+import AddIcon from '@material-ui/icons/Add';
+
 
 const AddNutritionCheck = () => {
 
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   const [checked, setChecked] = useState(false);
 
@@ -33,6 +37,8 @@ const AddNutritionCheck = () => {
       <FormControlLabel
         control={
           <Checkbox
+          icon={<AddIcon />}
+          checkedIcon={<AddIcon />}
             checked={checked}
             onChange={handleChange}
             name="checked"

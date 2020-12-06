@@ -1,4 +1,4 @@
-import { fetchRecipePending, fetchRecipeSuccess, fetchRecipeError } from './fetching.js';
+// import { fetchRecipePending, fetchRecipeSuccess, fetchRecipeError } from './fetching.js';
 import { ingredientsAutocomplete } from '../APIs/API';
 
 

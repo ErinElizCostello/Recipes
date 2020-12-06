@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
-import SelectForm from './selectForm'
+// import SelectForm from './selectForm'
 import GeneralSearch from './generalSearch'
-import { theList, deleteItem, clearList } from '../../actions/list'
+import { deleteItem,
+  // theList,  clearList 
+} from '../../actions/list'
 
 
 const ShowHideGenSearch = (props) => {

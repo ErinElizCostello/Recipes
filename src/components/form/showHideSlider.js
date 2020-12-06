@@ -7,15 +7,15 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import SliderForm from './sliderForm'
 import TimeSlider from './timeSlider'
 import {sliders, slidersDelete} from '../../actions/sliderActions'
-
+import AddIcon from '@material-ui/icons/Add';
 
 const ShowHideSlider = (props) => {
 
   const dispatch = useDispatch()
 
   const info = props.e
-  const theAction = props.e.actionName
-  const deleteAction = props.e.deleteAction
+  // const theAction = props.e.actionName
+  // const deleteAction = props.e.deleteAction
   const minimumValue = props.e.minimum
   const maximumValue = props.e.maximum
   const label = props.e.checkBoxLabel
@@ -42,6 +42,8 @@ const ShowHideSlider = (props) => {
       <FormControlLabel
         control={
           <Checkbox
+          icon={<AddIcon />}
+          checkedIcon={<AddIcon />}
             checked={checked}
             onChange={handleChange}
             name="checked"
@@ -50,7 +52,8 @@ const ShowHideSlider = (props) => {
         }
         label={label}
       />
-      {checked && label === "Add a maximum ready time" ? <TimeSlider /> :
+      {
+      checked && label === "Add a maximum ready time" ? <TimeSlider /> :
         checked ? <SliderForm theInfo={info} /> : notChecked()}
       {checked ? automaticDisp() : null}
     </div>

@@ -8,7 +8,7 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-import { dietTypeList } from '../../actions/dietType';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -97,7 +97,7 @@ const SelectForm = (props) => {
           onChange={onSelect}
           label="Diet Type"
         >
-          {menuItem.map(e => <MenuItem value={e} >{e}</MenuItem>)}
+          {menuItem.map(e => <MenuItem key={Math.random()} value={e} >{e}</MenuItem>)}
         </Select>
         <div>
           {

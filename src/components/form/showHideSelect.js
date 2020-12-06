@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 import SelectForm from './selectForm'
-import Ingredients from './ingredients'
+// import Ingredients from './ingredients'
+import AddIcon from '@material-ui/icons/Add';
 
 
 
@@ -36,6 +37,8 @@ const ShowHideSelect = (props) => {
       <FormControlLabel
         control={
           <Checkbox
+          icon={<AddIcon />}
+          checkedIcon={<AddIcon />}
             checked={checked}
             onChange={handleChange}
             name="checked"

@@ -1,4 +1,4 @@
-const initialState = {
+// const initialState = {
       //   Alcohol: { min: [], max: []} ,
       //   Caffeine: { min: [], max: [] },
       //   Calories: {min: [], max: [] },
@@ -35,7 +35,7 @@ const initialState = {
       //   VitaminB5: {min: [], max: [] },
       //   VitaminB6: {min: [], max: [] },
       //   VitaminB1: { min: [], max: [] }
-}
+// }
 
 export const sliders = (state = {}, action) => {
    

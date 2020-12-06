@@ -9,11 +9,10 @@ import { sliders,
   slidersDelete 
 } from '../../actions/sliderActions'
 
-import { aMaximumReadyTime, deleteMaximumReadyTime } from '../../actions/maximumReadyTime'
 
 // import { numberOfResults, deleteNumberOfResults, clearNumberOf}
 
-const zeDietTypes = 'theDietTypes'
+
 
 export const ingredientsInformation = [
   {

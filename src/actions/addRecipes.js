@@ -1,8 +1,11 @@
-import { fetchRecipePending, fetchRecipeSuccess, fetchRecipeError } from './fetching.js';
-import { fetchRecipe } from '../APIs/API';
+import {
+  fetchRecipePending,
+  // fetchRecipeSuccess, fetchRecipeError 
+} from './fetching.js';
+// import { fetchRecipe } from '../APIs/API';
 import store from '../store'
-import { recipeReducer } from '../reducers/fetching.js';
-import { ACReducer } from '../reducers/autoComplete.js';
+// import { recipeReducer } from '../reducers/fetching.js';
+// import { ACReducer } from '../reducers/autoComplete.js';
 
 
 export const addRecipe = () => dispatch => {
@@ -10,27 +13,61 @@ export const addRecipe = () => dispatch => {
   dispatch(fetchRecipePending());
 
   const state = store.getState();
+  const genSearch = state.genSearch
+  const ingredients = state.theList
   const theDietTypes = state.theDietTypes
   const cuisines = state.cuisines
   const intolerances = state.intolerances
   const mealType = state.mealType
   const sliders = state.sliders;
+  const maxReadyTime = state.maximumReadyTime
 
   let theInfo = '';
 
+  genSearch.length !== 0 ?
+    theInfo += `&query=${genSearch.item.toLowerCase()}`
+    :
+    theInfo += '';
+
+
+    let ingreds = ''
+    ingredients.forEach(e => {
+      ingredients.indexOf(e) === ingredients.length - 1 ?
+        ingreds += e.item
+        :
+        ingreds += e.item + ','
+    })
+  
+    ingredients.length !== 0
+      ?
+      theInfo += `&includeIngredients=${ingreds}`
+      :
+      theInfo += '';
+
+
+
+
+
+  
+  maxReadyTime.length !== 0 ?
+    theInfo +=`&maxReadyTime=${maxReadyTime}`
+  :
+    theInfo += '';
+  
+
   theDietTypes.length !== 0
     ?
-    theDietTypes.forEach(e => {
-      theInfo += `&diet=${e.theItem}`
-    })
+    // theDietTypes.forEach(e => {
+    theInfo += `&diet=${theDietTypes.theItem.toLowerCase()}`
+    // })
     :
     theInfo += '';
 
   mealType.length !== 0
     ?
-    mealType.forEach(e => {
-      theInfo += `&type=${e.theItem}`
-    })
+    // mealType.forEach(e => {
+    theInfo += `&type=${mealType.theItem.toLowerCase()}`
+    // })
     :
     theInfo += '';
 
@@ -44,13 +81,13 @@ export const addRecipe = () => dispatch => {
 
   cuisines.length !== 0
     ?
-    theInfo += `&cuisine=${cuisi}`
+    theInfo += `&cuisine=${cuisi.toLowerCase()}`
     :
     theInfo += '';
 
   let intol = ''
   intolerances.forEach(e => {
-    intolerances.indexOf(e) === intolerances.length -1 ?
+    intolerances.indexOf(e) === intolerances.length - 1 ?
       intol += e.theItem
       :
       intol += e.theItem + ','
@@ -58,22 +95,27 @@ export const addRecipe = () => dispatch => {
 
   intolerances.length !== 0
     ?
-    theInfo += `&intolerances=${intol}`
+    theInfo += `&intolerances=${intol.toLowerCase()}`
     :
     theInfo += '';
 
-
+  let slidezz = ''
 
   Object.keys(sliders).forEach(e => {
-    sliders !== {} ?
-      theInfo += `& min${e[0].toUpperCase() + e.slice(1)}=${e.min}& max${e[0].toUpperCase() + e.slice(1)}=${e.max} `
+    //  let mini = e.min
+    //  let maxi = e.max
+    sliders !== {} && e !== "Add a maximum ready time" ?
+      slidezz += `&min${e[0].toUpperCase() + e.slice(1)}=${sliders[e].min}&max${e[0].toUpperCase() + e.slice(1)}=${sliders[e].max} `
       :
-      theInfo += ''
+      slidezz += ''
   })
 
-  // let theFinalInfo  = theInfo.split('').filter(e => e !== ' ').join('').toLowerCase()
-  let theFinalInfo = theInfo.toLowerCase()
-  console.log(theFinalInfo)
+  let noSpaceSlidezz = slidezz.split('').filter(e => e !== ' ').join('')
+  // let theFinalInfo = theInfo
+  theInfo += noSpaceSlidezz
+
+
+  console.log(theInfo)
 }
 
 

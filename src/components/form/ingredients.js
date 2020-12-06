@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/autocomplete';
 
 import { theList, deleteItem, clearList } from '../../actions/list'
-import { addAutoComplete, fetchACSuccess, fetchACError } from '../../actions/autoComplete'
+import { fetchACSuccess, fetchACError } from '../../actions/autoComplete'
 
 const API_KEY = 'c976da7e49db48afbbbd3353b50742c7'
 
@@ -42,8 +42,7 @@ const Ingredients = () => {
 
   const addToList = (item, thing) => {
     setValue({ item: thing })
-    console.log("value: " + value.item)
-    console.log("thing:" + thing)
+   
     dispatch(theList({
       id: Math.random(),
       [item]: value.item,
@@ -99,12 +98,3 @@ const Ingredients = () => {
 }
 
 export default Ingredients
-
-
-{/* <TextField
-        id="outlined-basic"
-        label="Ingredients"
-        variant="outlined"
-        onChange={e => setValue({ item: e.target.value })}
-        value={value.item}
-      /> */}
