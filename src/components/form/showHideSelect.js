@@ -7,6 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import SelectForm from './selectForm'
 // import Ingredients from './ingredients'
 import AddIcon from '@material-ui/icons/Add';
+import MinimizeIcon from '@material-ui/icons/Minimize';
 
 
 
@@ -37,7 +38,7 @@ const ShowHideSelect = (props) => {
       <FormControlLabel
         control={
           <Checkbox
-          icon={<AddIcon />}
+          icon={ <AddIcon /> }
           checkedIcon={<AddIcon />}
             checked={checked}
             onChange={handleChange}

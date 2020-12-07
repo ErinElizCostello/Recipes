@@ -1,8 +1,5 @@
-import {
-  fetchRecipePending,
-  // fetchRecipeSuccess, fetchRecipeError 
-} from './fetching.js';
-// import { fetchRecipe } from '../APIs/API';
+import { fetchRecipePending, fetchRecipeSuccess, fetchRecipeError } from './fetching.js';
+import { fetchRecipes } from '../APIs/API';
 import store from '../store'
 // import { recipeReducer } from '../reducers/fetching.js';
 // import { ACReducer } from '../reducers/autoComplete.js';
@@ -43,10 +40,6 @@ export const addRecipe = () => dispatch => {
       theInfo += `&includeIngredients=${ingreds}`
       :
       theInfo += '';
-
-
-
-
 
   
   maxReadyTime.length !== 0 ?
@@ -115,7 +108,19 @@ export const addRecipe = () => dispatch => {
   theInfo += noSpaceSlidezz
 
 
-  console.log(theInfo)
+  // console.log(theInfo)
+  fetchRecipes(theInfo).then(recipe => {
+    if (recipe.error) {
+      throw (recipe.error);
+    }
+
+    console.log(recipe)
+
+    dispatch(fetchRecipeSuccess(recipe.results))
+  })
+  .catch(error => {
+    dispatch(fetchRecipeError(error))
+  })
 }
 
 

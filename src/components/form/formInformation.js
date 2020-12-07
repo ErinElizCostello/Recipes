@@ -49,7 +49,7 @@ export const selectInformation = [
       reducerName: 'b',
       menuItem: [
         'African', 'American', 'British', 'Cajun', 'Caribbean', 'Chinese',
-        'Eastern European', 'European', 'French', 'German', 'Greek', 'Japanese', 'Jewish', 'Korean', 'Latin American', 'Mediterranean', 'Thai', 'Vietnamese']
+        'Eastern European', 'European', 'French', 'German', 'Greek', 'Indian', 'Irish', 'Italian', 'Japanese', 'Jewish', 'Korean', 'Latin American', 'Mediterranean', 'Mexican', 'Middle Eastern', 'Nordic', 'Southern', 'Spanish', 'Thai', 'Vietnamese']
     }
   },
   {

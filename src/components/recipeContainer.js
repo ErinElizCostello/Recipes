@@ -29,25 +29,28 @@ const useStyles = makeStyles(theme => ({
 
 
 const RecipeContainer = () => {
-const classes = useStyles()
-const recipes = useSelector(state => state.recipeReducer.data)
-const loading = useSelector(state => state.recipeReducer.pending)
-  
+  const classes = useStyles()
+  const recipes = useSelector(state => state.recipeReducer.data)
+  const loading = useSelector(state => state.recipeReducer.pending)
+
 
   return (
     <div>
-      {loading ? "WAIT JUST ONE SEC BITCH IT'S LOADING" : null}
-      <Grid container spacing={1}>
-        <Grid item md={4}></Grid>
-        <Grid item md={4}>
-          <GridList
-            className={classes.gridList}
-            cols={1.5}>
-            {recipes && recipes.map(e => <Recipe e={e} />)}
-          </GridList>
-        </Grid>
-        <Grid item md={4}></Grid>
-      </Grid>
+      {loading ? "WAIT JUST ONE SEC BITCH IT'S LOADING" :
+        // <Grid container spacing={1}>
+        //   <Grid item md={4}></Grid>
+        //   <Grid item md={4}>
+        //     <GridList
+        //       className={classes.gridList}
+        //       cols={1.5}>
+              // {
+                recipes && recipes.map(e => <Recipe recipe={e} />)
+              // }
+        //     </GridList>
+        //   </Grid>
+        //   <Grid item md={4}></Grid>
+        // </Grid>
+      }
     </div>
   )
 }

@@ -10,18 +10,18 @@ const initialState = {
 
 export function recipeReducer(state = initialState, action) {
     switch (action.type) {
-        case FETCH_RECIPE_PENDING:
+        case 'FETCH_RECIPE_PENDING':
             return {
                 ...state,
                 pending: true
             }
-        case FETCH_RECIPE_SUCCESS:
+        case 'FETCH_RECIPE_SUCCESS':
             return {
                 ...state,
                 pending: false,
                 data: action.data
             }
-        case FETCH_RECIPE_ERROR:
+        case 'FETCH_RECIPE_ERROR':
             return {
                 ...state,
                 pending: false,
