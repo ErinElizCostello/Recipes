@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import { addRecipe } from '../../actions/addRecipes';
 
 
-
 const Submit = () => {
 
   const dispatch = useDispatch()
@@ -16,14 +15,14 @@ const Submit = () => {
   }
 
   return (
-    <div>
+    <div> 
       <Button
         variant="contained"
         color="secondary"
         onClick={() => onSubmit()}
       >
         Find recipes!
-      </Button>
+      </Button>     
     </div>
   )
 }

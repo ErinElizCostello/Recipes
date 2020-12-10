@@ -14,6 +14,7 @@ import { maximumReadyTime } from './maximumReadyTime'
 import { sliders } from './sliderReducers'
 import { ACReducer } from './autoComplete'
 import {genSearch} from './genSearch'
+import { recipeID } from './recipeID'
 
 const rootReducer = combineReducers({
   recipeReducer,
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   ACReducer,
   genSearch,
   sliders,
+  recipeID
   // protein,
   // carbs,
   // calories,

@@ -114,8 +114,6 @@ export const addRecipe = () => dispatch => {
       throw (recipe.error);
     }
 
-    console.log(recipe)
-
     dispatch(fetchRecipeSuccess(recipe.results))
   })
   .catch(error => {
