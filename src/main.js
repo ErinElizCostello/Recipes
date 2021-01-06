@@ -8,14 +8,30 @@ import LogIn from './components/login-signUp/login'
 
 const Main = () => {
   return (
-    
+
     <div >
-       
-      <Route path='/search' component={FormAndRecipeContainer}></Route>
-      <Route path='/recipeInformation' component={RecipeInformation}></Route>
-      <Route path='/signUp' component={SignUp}></Route>
-      <Route path='/logIn' component={LogIn}></Route>
-   
+
+      <Route exact path='/'
+      // component={FormAndRecipeContainer}
+      >
+        <FormAndRecipeContainer />
+      </Route>
+      <Route path='/recipeInformation'
+      // component={RecipeInformation}
+      >
+        <RecipeInformation />
+      </Route>
+      <Route path='/signUp'
+      // component={SignUp}
+      >
+        <SignUp />
+      </Route>
+      <Route path='/logIn'
+      // component={LogIn}
+      >
+        <LogIn />
+      </Route>
+
     </div>
   );
 }

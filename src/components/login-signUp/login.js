@@ -45,7 +45,8 @@ const LogIn = () => {
 
   const [values, setValues] = useState({
     username: '',
-    password: ''
+    password: '',
+    loginState: ''
   })
   
   const handleChange = (prop) => (event) => {
@@ -61,7 +62,24 @@ const LogIn = () => {
   };
 
   const logInUser = (theUser, thePassword) => {
-    return console.log(`searching for ${theUser} from the database and her password is ${thePassword}!`)
+    fetch('http://localhost:3001/logIn', {
+      method: 'POST',
+      mode: "cors",
+      body: JSON.stringify({
+        username: theUser, 
+        password: thePassword
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        data.message ?
+         setValues({loginState: data.message})
+        :
+        setValues({loginState: data[0].username})
+      })
   }
 
   return (
@@ -107,6 +125,7 @@ const LogIn = () => {
           Login
         </Button>
       </form>
+      <h1>{values.loginState}</h1>
     </div>
   );
 }

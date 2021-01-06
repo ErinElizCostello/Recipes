@@ -63,7 +63,22 @@ const SignUp = () => {
   };
 
   const addUser = (theUser, thePassword) => {
-    return console.log(`adding ${theUser} to database and her password is ${thePassword}!`)
+    
+    fetch('http://localhost:3001/signUp', {
+      method: 'POST',
+      mode: "cors",
+      body: JSON.stringify({
+        username: theUser, 
+        password: thePassword
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('thedata' + data)
+      })
   }
 
   return (
