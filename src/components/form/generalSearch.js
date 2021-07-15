@@ -1,88 +1,51 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
-import Button from '@material-ui/core/Button';
-import Chip from '@material-ui/core/Chip';
+import { generalSearch } from '../../state/actions/generalSearch'
+
+import { useStylesGeneralSearch } from '../styles/homePage/generalSearchInput'
+
 import TextField from '@material-ui/core/TextField';
-// import Autocomplete from '@material-ui/lab/autocomplete';
-
-import { genSearch, deleteGenSearchItem, clearGenSearchList } from '../../actions/genSearch'
-// import { addAutoComplete, fetchACSuccess, fetchACError } from '../../actions/autoComplete'
-
-// const API_KEY = 'c976da7e49db48afbbbd3353b50742c7'
+import SubmitButton from './submitButton'
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 
 const GeneralSearch = () => {
-
+  const classes = useStylesGeneralSearch()
   const dispatch = useDispatch()
 
-  const heresAList = useSelector(state => state.genSearch)
+  const [value, setValue] = useState('')
 
-  const [value, setValue] = useState({})
-
-  const addToList = (item, thing) => {
-    setValue({ item: thing })
-
-    dispatch(genSearch({
+  const onChange = (e) => {
+    setValue(e.target.value)
+    dispatch(generalSearch({
       id: Math.random(),
-      [item]: value.item,
+      item: e.target.value,
     }));
-    value.item = '';
-  }
-
-  const onDeleteItem = id => {
-    // const update = heresAList.filter(e => e.id !== id)
-   const update = []
-    dispatch(deleteGenSearchItem(update))
   }
 
   return (
-    <div>
-      <div>
-        {
-          heresAList.length !== 0 ?
-          <div key={heresAList.id}>
-          <Chip
-            label={heresAList.item}
-            onDelete={() => onDeleteItem(heresAList.id)}
-            color="primary"
-          />
-        </div>
-      : null  
-      }
-      </div>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => addToList("item", value.item)}
-      >
-        Add
-      </Button>
+    <div className={classes.display}>
+
       <TextField
-        id="outlined-basic"
-        label="Search Anything"
+        id="input-with-icon-textfield"
+        className={classes.input}
+        label=""
         variant="outlined"
-        onChange={e => setValue({ item: e.target.value })}
-        value={value.item}
+        onChange={e => onChange(e)}
+        value={value}
+        placeholder="Search for your favorite recipes"
+        InputProps={{
+          className: classes.input,
+          startAdornment: (
+            <InputAdornment>
+            <SubmitButton />
+            </InputAdornment>
+          )
+        }}
       />
-      {/* <Button
-        variant="contained"
-        color="primary"
-        onClick={() => dispatch(clearGenSearchList([]))}
-      >
-        Clear List
-    </Button> */}
     </div>
   )
 }
 
 export default GeneralSearch
-
-// {
-  // Array.isArray(heresAList) && heresAList.length !== 0 ? 
-  // heresAList.map(e =>
-
-
-  // )
-  //   : null
-  // }

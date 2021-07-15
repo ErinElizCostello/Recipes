@@ -1,30 +1,31 @@
 import React from 'react';
 
-import ShowHideContainer from './showHideContainer'
+import { useStylesForm} from '../styles/homePage/form'
+
+import GeneralSearch from './generalSearch'
+import ShowHideButton from './advancedSearch/showHideButton'
+import ChipsArea from '../form/advancedSearch/chipsArea'
 
 
 
 const Form = () => {
+  const classes = useStylesForm()
 
   return (
     <div>
-      <ShowHideContainer />
-      --------------
-      {/* <IngredientsHS />
-      <Cuisines />
-      <DietType />
-      <Intolerances />
-      <MealType />
-      <MaximumReadyTime />
-      <ProteinHS />
-      <CarbsHS />
-      <CaloriesHS />
-      <SugarHS />
-      <FiberHS />
-      <Submit />    */}
+      <div className={classes.generalSearch}>
+        <div>
+          <GeneralSearch />
+        </div>
+        <div className={classes.chipsArea}>
+          <ChipsArea />
+        </div>
+      </div>
+      <div className={classes.display}>
+        <ShowHideButton formType="advancedSearch" className={classes.text} />
+      </div>
     </div>
   )
 }
 
-export default Form 
-
+export default Form
