@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux'
 
 import BackButton from '../backButton/backButton'
@@ -26,11 +26,15 @@ const SearchResults = () => {
   const noResults = useSelector(state => state.recipeSearch.noResults)
 
 
-  const obj = error && Object.assign(error).error 
+/////------------//////
 
-  obj &&
-console.log(obj)
+//   const obj = error && Object.assign(error).error 
 
+//   obj &&
+// console.log(obj)
+
+
+//--------/////
 
   // const errorMessage = Object.assign(error)
 
@@ -85,7 +89,7 @@ console.log(obj)
                       
                            
                   }
-                  {obj === ' Recipes could not be fetched' && <ErrorMessage error={obj} />  }
+                  {/* {obj === ' Recipes could not be fetched' && <ErrorMessage error={obj} />  } */}
                 </Grid>
               </Container>
               {/* <RecipeContainer /> */}

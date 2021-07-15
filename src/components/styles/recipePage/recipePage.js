@@ -15,6 +15,6 @@ export const useStylesRecipePage = makeStyles({
   },
 
   whiteSpaceBtwnTopDividerAndImage: {
-    margin: 75
+    margin: 50
   }
 })

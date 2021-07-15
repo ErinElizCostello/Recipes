@@ -10,7 +10,7 @@ export const useStylesFavoritesPage = makeStyles({
   },
 
   spacingUnderHeader: {
-    margin: 200
+    margin: 150
   },
 
   //text
@@ -18,6 +18,7 @@ export const useStylesFavoritesPage = makeStyles({
     fontSize: 50,
     textAlign: 'center',
     color: '#5e5e5e',
+    fontFamily: 'Fascinate, cursive'
   },
 
   //icon

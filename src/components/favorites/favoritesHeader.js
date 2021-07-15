@@ -21,7 +21,8 @@ const FavoritesHeader = (props) => {
               {/* <FaceIcon className={classes.icon} /> */}
               {/* <img src={logoImage} style={{ height: 100 }} className={classes.icon} /> */}
               <br />
-              {user.payload.user}'s Favorites
+              {/* {user.payload.user}'s */}
+              The Favorites
             </Typography>
             <div className={classes.spacingUnderHeader}></div>
           </div>
