@@ -33,7 +33,7 @@ const RecipePage = () => {
 
   return (
     <div>
-      <BackButton backToWhere={localState.recipeSearch.data.length ? 'home' : 'favorites'} />
+      <BackButton backToWhere={localState.recipeSearch.data.length ? 'searchResults' : 'favorites'} />
       
       {/* <Divider variant="middle" /> */}
       <div className={classes.whiteSpaceBtwnTopDividerAndImage} />

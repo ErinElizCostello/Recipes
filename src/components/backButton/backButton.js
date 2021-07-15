@@ -21,7 +21,7 @@ const BackButton = (props) => {
   return (
     <div>
       <Button className={classes.button} onClick={() => turnOffNoResults()}>
-        <Link to={props.backToWhere === "home" ? "/" : `/favorites/${user}`
+        <Link to={props.backToWhere === "home" ? "/" : props.backToWhere === "searchResults" ? "/searchResults" : `/favorites/${user}`
         // props.backToWhere === "favorites" ? `/favorites/${user}` : '/searchResults'
         } >
           <KeyboardBackspaceIcon className={classes.icon} />
