@@ -25,8 +25,6 @@ const SearchResults = () => {
   const showSearches = useSelector(state => state.recipeSearch.data)
   const noResults = useSelector(state => state.recipeSearch.noResults)
 
-  // const [error, setError] = useState(null)
-  // const errorMessage = error
 
   const obj = error && Object.assign(error).error 
 
