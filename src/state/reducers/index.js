@@ -13,6 +13,7 @@ import { recipeID } from './recipeID'
 import { favoritesCodes } from './favoritesCodes'
 import { userFavorites } from './userFavorites'
 import { chips } from './chips'
+import {showSliderSelectionsInChips} from './showSliderSelectionsInChips'
 // import { loggedOutDialogue } from './loggedOutDialogue'
 
 
@@ -30,7 +31,8 @@ const rootReducer = combineReducers({
   recipeID,
   favoritesCodes,
   userFavorites,
-  chips
+  chips,
+  showSliderSelectionsInChips
   // loggedOutDialogue
 });
 

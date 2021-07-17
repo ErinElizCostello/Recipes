@@ -1,6 +1,9 @@
 import React, { useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { useStylesNutritionSliderDialogue } from '../../styles/homePage/nutritionSliderDialogue'
+
+import {showSliderSelectionsInChips} from '../../../state/actions/showSliderSelectionsInChips'
 
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -18,6 +21,8 @@ import { sliderInformationNutrition } from '../formLabels/nutritionSliders'
 const NutritionSliderDialog = () => {
   const classes = useStylesNutritionSliderDialogue()
 
+  const dispatch = useDispatch()
+
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
 
@@ -31,6 +36,7 @@ const NutritionSliderDialog = () => {
   };
 
   const handleClose = () => {
+    dispatch(showSliderSelectionsInChips(true))
     setOpen(false);
   };
 

@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 import { useStylesFavoritesPage } from '../styles/favoritesPage'
 import Typography from '@material-ui/core/Typography';
 import FaceIcon from '@material-ui/icons/Face';
-import logoImage from '../../logo/logoImage.png'
 
 
 const FavoritesHeader = (props) => {

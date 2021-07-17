@@ -6,6 +6,7 @@ export const useStylesErrorMessage = makeStyles({
     direction: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 20
   },
   text: {
     fontSize: 20,

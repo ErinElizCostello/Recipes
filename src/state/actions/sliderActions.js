@@ -17,7 +17,8 @@ export const sliders = (listValues, label) => dispatch => {
 
 
 export const slidersDelete = label => {
-  
+  console.log('label', label)
+
   const state = store.getState()
   let sliderObj = state.sliders
 

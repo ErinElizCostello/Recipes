@@ -10,5 +10,13 @@ export const useStylesSearchResults = makeStyles({
     margin: 50, 
     color: '#5e5e5e', 
     fontWeight: 'light'
+  },
+
+  spinnerSpacing: {
+    display: 'flex', 
+    direction: 'column', 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    marginTop: 200
   }
 })

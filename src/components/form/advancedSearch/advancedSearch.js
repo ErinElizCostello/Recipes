@@ -4,7 +4,7 @@ import { selectInformation } from '../formLabels/select'
 
 import { makeStyles } from '@material-ui/core/styles';
 
-// import { useStyles } from '../../styles/homePage/advancedSearch'
+// import { useStylesAdvancedSearch } from '../../styles/homePage/advancedSearch'
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 
@@ -13,9 +13,37 @@ import Ingredients from './ingredients';
 import SelectForm from './selectForm';
 
 
+
+
+
+const AdvancedSearch = () => {
+  const classes = useStylesAdvancedSearch()
+
+  return (
+    <div>
+      <Ingredients />
+      <div
+        className={classes.root}
+      >
+        <GridList className={classes.gridList} cols={6}>
+          {selectInformation.map(selectFormInformation => <GridListTile key={Math.random()}><SelectForm selectFormInformation={selectFormInformation.stuff} />
+          </GridListTile>
+          )}
+          <GridListTile className={classes.nutrition}>
+            <NutritionSliderDialog />
+          </GridListTile>
+        </GridList>
+      </div>
+    </div>
+  );
+}
+
+export default AdvancedSearch;
+
+
 ///??? when i import its no doing the thing right?????
 
-const useStyles = makeStyles((theme) => ({
+const useStylesAdvancedSearch = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -46,32 +74,6 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 10
   }
 }));
-
-
-const AdvancedSearch = () => {
-  const classes = useStyles()
-
-  return (
-    <div>
-      <Ingredients />
-      <div
-        className={classes.root}
-      >
-        <GridList className={classes.gridList} cols={6}>
-          {selectInformation.map(selectFormInformation => <GridListTile key={Math.random()}><SelectForm selectFormInformation={selectFormInformation.stuff} />
-          </GridListTile>
-          )}
-          <GridListTile className={classes.nutrition}>
-            <NutritionSliderDialog />
-          </GridListTile>
-        </GridList>
-      </div>
-    </div>
-  );
-}
-
-export default AdvancedSearch;
-
 
 
 
