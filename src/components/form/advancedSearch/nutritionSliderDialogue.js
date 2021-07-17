@@ -36,7 +36,7 @@ const NutritionSliderDialog = () => {
   };
 
   const handleClose = () => {
-    dispatch(showSliderSelectionsInChips(true))
+    dispatch(showSliderSelectionsInChips('x'))
     setOpen(false);
   };
 

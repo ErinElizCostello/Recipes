@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
 import { deleteIngredient } from '../../../state/actions/ingredientsList'
@@ -8,7 +8,7 @@ import { deleteMealType } from '../../../state/actions/mealType'
 import { deleteDiet } from '../../../state/actions/dietType'
 import { deleteMaximumReadyTime } from '../../../state/actions/maximumReadyTime'
 import { slidersDelete } from '../../../state/actions/sliderActions'
-// import { showSliderSelectionsInChips } from '../../../state/actions/showSliderSelectionsInChips'
+import { showSliderSelectionsInChips } from '../../../state/actions/showSliderSelectionsInChips'
 
 
 import { useStylesChipsArea } from '../../styles/homePage/chipsArea'
@@ -33,24 +33,36 @@ const ChipsArea = () => {
 
   let sliderRanges = null
 
+
+  sliderRanges = Object.assign(slider)
+  // const [moreChips, setMoreChips] = useState()
+
   // if(showSliderChips) {sliderRanges = Object.assign(slider)}
   // showSliderChips ? sliderRanges = Object.assign(slider) : null
-  const setSliderRangesInChips = () => showSliderChips ? sliderRanges = Object.assign(slider) : null
+  // const setSliderRangesInChips = () => {
 
-  setSliderRangesInChips()
+  //   if (showSliderChips || updatedChips) {
+  //     sliderRanges = Object.assign(slider)
+  //   }
+  //   // dispatch(showSliderSelectionsInChips(false))
+  // }
 
-  const [updatedChips, setUpdatedChips] = useState(false)
+  // setSliderRangesInChips()
+
+  /// updateRef creates a reference for updatedChips so that the sliderRanges object will update with the new list of nutrition selections if one of them is deleted (see line 153)
+  const [updateRef, setUpdateRef] = useState([])
+  const [updatedChips, setUpdatedChips] = useState([])
 
   const setSliderRangesInChipsAfterDeletingOne = () => {
     sliderRanges = null
     sliderRanges = Object.assign(slider)
-    setUpdatedChips(true)
+    setUpdatedChips([...updatedChips, 'x'])
     // setUpdatedChips(false)
     console.log('hellllooooo', sliderRanges)
     // falseChips()
   }
 
-  const falseChips = () => setUpdatedChips(false)
+  // const falseChips = () => setUpdatedChips(false)
 
   const formTypesSingleOption = [dietTypes, mealType, maximumReadyTime]
   const formTypesMultipleOptions = [ingredients, cuisines, intolerances]
@@ -138,7 +150,8 @@ const ChipsArea = () => {
         )
       }
       {
-        updatedChips || sliderRanges ? Object.keys(sliderRanges).map(slider =>
+        updatedChips.length > updateRef.length || 
+        sliderRanges ? Object.keys(sliderRanges).map(slider =>
           <div className={classes.chipMargin}>
             <Chip
               label={`${slider}: ${sliderRanges[slider].min} - ${sliderRanges[slider].max}`}
@@ -147,7 +160,7 @@ const ChipsArea = () => {
             />
           </div>
           // ,
-          // falseChips()
+          // setUpdateRef([...updateRef, 'x'])
         ) : null
       }
     </div>
