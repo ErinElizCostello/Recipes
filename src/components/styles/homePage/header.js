@@ -17,6 +17,7 @@ export const useStylesHeaderHomePage = makeStyles({
   titleSpacing: {
     display: 'flex', 
     direction: 'row', 
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginBottom: 20
   }
 })

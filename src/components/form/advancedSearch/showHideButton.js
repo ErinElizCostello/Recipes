@@ -6,6 +6,8 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import AddIcon from '@material-ui/icons/Add';
 import AdvancedSearch from './advancedSearch';
+import Grid from '@material-ui/core/Grid';
+
 
 
 const ShowHideButton = (props) => {
@@ -20,22 +22,43 @@ const ShowHideButton = (props) => {
 
   return (
     <div>
-      <FormControlLabel
-        control={
-          <Checkbox
-            icon={<AddIcon />}
-            checkedIcon={<AddIcon />}
-            checked={checked}
-            onChange={handleChange}
-            name="checked"
-            color="secondary"
-          />
-        }
-        label="Advanced Search"
-      />
+      <Grid container
+        display="flex"
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+
+      >
+        <FormControlLabel
+          control={
+            <Checkbox
+              icon={<AddIcon />}
+              checkedIcon={<AddIcon />}
+              checked={checked}
+              onChange={handleChange}
+              name="checked"
+              color="secondary"
+            />
+          }
+          label="Advanced Search"
+        />
+      </Grid>
       {
         checked && formType === "advancedSearch" ?
-          <AdvancedSearch /> : null
+          // <div 
+          // style={{display: 'flex', direction: 'row', justifyContent: 'center', alignItems: 'center'}}
+          // >
+          <Grid container
+            display="flex"
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+
+          >
+            <AdvancedSearch />
+          </Grid>
+          // </div>
+          : null
       }
     </div>
   )

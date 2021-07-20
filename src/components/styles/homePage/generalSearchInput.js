@@ -1,22 +1,28 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export const useStylesGeneralSearch = makeStyles({
-  
-  display: {
-    display: 'flex',
-    direction: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
+export const useStylesGeneralSearch = makeStyles((theme) => ({
+
+  // display: {
+  //   display: 'flex',
+  //   direction: 'column',
+  //   justifyContent: 'center',
+  //   alignItems: 'center'
+  // },
 
   input: {
     backgroundColor: 'rgba(255,255,255)',
     borderRadius: '5px',
-    width: 500,
+    [theme.breakpoints.up('xs')]: {
+      width: 325
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: 500
+    },
     height: 60
   },
-submit: {
-  margin: 20
-}
 
-})
+  submit: {
+    margin: 20
+  }
+
+}))

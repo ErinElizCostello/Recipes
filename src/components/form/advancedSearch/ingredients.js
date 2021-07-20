@@ -71,7 +71,7 @@ const Ingredients = () => {
   return (
     <div className={classes.display}>
       {error && <ErrorMessage error={error} />}
-      <div style={{}}>
+      {/* <div style={{}}> */}
         {/* {Array.isArray(listOfIngredients) && listOfIngredients.length !== 0 ?
           // saveChips()
           listOfIngredients.map(theIngredient =>
@@ -85,8 +85,8 @@ const Ingredients = () => {
           )
           : null
         } */}
-      </div>
-
+      {/* </div> */}
+<div>
       <Autocomplete
         className={classes.input}
         id="combo-box-demo"
@@ -97,7 +97,11 @@ const Ingredients = () => {
         // PaperComponent={paperComponent}
         renderInput={(params) => <TextField {...params} label="Ingredients to use..." variant="outlined" />}
       />
-      <div className={classes.buttonSpacing}>
+      </div>
+      <div 
+      className={classes.buttonSpacing}
+      >
+        
         <Button
         className={classes.button}
           // variant="contained"

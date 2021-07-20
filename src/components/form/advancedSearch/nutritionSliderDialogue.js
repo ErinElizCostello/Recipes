@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { useStylesNutritionSliderDialogue } from '../../styles/homePage/nutritionSliderDialogue'
 
-import {showSliderSelectionsInChips} from '../../../state/actions/showSliderSelectionsInChips'
+import { showSliderSelectionsInChips } from '../../../state/actions/showSliderSelectionsInChips'
 
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -14,6 +14,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import SliderForm from './sliderForm';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import Typography from '@material-ui/core/Typography';
+import FastfoodIcon from '@material-ui/icons/Fastfood';
 
 import { sliderInformationNutrition } from '../formLabels/nutritionSliders'
 
@@ -57,9 +58,11 @@ const NutritionSliderDialog = () => {
         className={classes.button}>
 
         {label()}
-        <KeyboardArrowRightIcon />
+        <FastfoodIcon />
+        <div className={classes.nutritionButtonIconSpacing}></div>
       </button>
       <Dialog
+        // className={classes.root}
         open={open}
         onClose={handleClose}
         scroll={scroll}

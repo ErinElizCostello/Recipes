@@ -10,7 +10,7 @@ const Title = () => {
     <div className={classes.font}
     // className='font'
     >
-      HUNGRY?
+      HUNGRY
     </div>
   );
 }

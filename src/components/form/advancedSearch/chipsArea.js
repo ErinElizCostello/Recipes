@@ -13,6 +13,8 @@ import { showSliderSelectionsInChips } from '../../../state/actions/showSliderSe
 
 import { useStylesChipsArea } from '../../styles/homePage/chipsArea'
 import Chip from '@material-ui/core/Chip';
+import Grid from '@material-ui/core/Grid';
+
 
 
 const ChipsArea = () => {
@@ -112,7 +114,14 @@ const ChipsArea = () => {
   // const badChips = () => setUpdatedChips(false)
 
   return (
-    <div className={classes.display}>
+    <div 
+    // className={classes.display}
+    >
+      <Grid container
+        display="flex"
+        direction="row"
+        flexWrap="wrap"
+        >
       {
         formTypesSingleOption.map(formType =>
           !Array.isArray(formType) && !formType.length ?
@@ -163,6 +172,7 @@ const ChipsArea = () => {
           // setUpdateRef([...updateRef, 'x'])
         ) : null
       }
+      </Grid>
     </div>
   );
 }

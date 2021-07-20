@@ -4,6 +4,7 @@ export const useStylesIngredientsInput = makeStyles((theme) => ({
 
   display: {
     display: 'flex',
+    flexWrap: 'wrap',
     direction: 'column',
     justifyContent: 'center',
     alignItems: 'center',

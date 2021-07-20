@@ -37,5 +37,9 @@ export const useStylesNutritionSliderDialogue = makeStyles((theme) => ({
   },
   sliderForm: {
     margin: 20
+  },
+
+  nutritionButtonIconSpacing: {
+    marginRight: 2
   }
 }))

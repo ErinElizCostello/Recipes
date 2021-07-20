@@ -6,6 +6,9 @@ import Form from '../form/form'
 import Dialogue from '../dialogue/dialogue'
 import Header from './header'
 
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+
 
 const HomePage = () => {
   const classes = useStylesHeaderHomePage()
@@ -13,10 +16,24 @@ const HomePage = () => {
   return (
     <div>
       <Dialogue dialogueType='loggedOut' />
-      <div className={classes.background}>
-        <Header />
-        <Form />
-      </div>
+      
+        <div className={classes.background}>
+          {/* <Container> */}
+            <Header />
+            <Grid container>
+            <Grid item md={4}></Grid>
+            <Grid item xs={12} md={4}>
+              <div 
+              // style={{overflow: 'hidden'}}
+              >
+            <Form  />
+            </div>
+            </Grid>
+            <Grid item md={4}></Grid>
+            </Grid>
+          {/* </Container> */}
+        </div>
+     
     </div>
   )
 }

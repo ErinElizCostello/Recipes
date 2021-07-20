@@ -25,7 +25,9 @@ const GeneralSearch = () => {
   }
 
   return (
-    <div className={classes.display}>
+    <div 
+    // className={classes.display}
+    >
 
       <TextField
         id="input-with-icon-textfield"
@@ -34,7 +36,8 @@ const GeneralSearch = () => {
         variant="outlined"
         onChange={e => onChange(e)}
         value={value}
-        placeholder="Search for your favorite recipes"
+        placeholder="Search your favorite recipes"
+        
         InputProps={{
           className: classes.input,
           startAdornment: (
