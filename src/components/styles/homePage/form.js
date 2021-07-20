@@ -1,12 +1,27 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export const useStylesForm = makeStyles({
+export const useStylesForm = makeStyles(theme => ({
   showHideButton: {
     // display: 'flex',
     // direction: 'column',
     // justifyContent: 'center',
     // alignItems: 'center',
-    color: '#5e5e5e'
+    [theme.breakpoints.up('xs')]: {
+      color: '#ffffff'
+    },
+    [theme.breakpoints.up('md')]: {
+      color: '#5e5e5e'
+    },
+    
+  },
+
+  addIcon: {
+    [theme.breakpoints.up('xs')]: {
+      color: '#ffffff'
+    },
+    [theme.breakpoints.up('md')]: {
+      color: '#5e5e5e'
+    },
   },
 
   text: {
@@ -24,4 +39,4 @@ export const useStylesForm = makeStyles({
   chipsArea: {
     margin: 10
   }
-})
+}))

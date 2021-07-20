@@ -8,9 +8,13 @@ import AddIcon from '@material-ui/icons/Add';
 import AdvancedSearch from './advancedSearch';
 import Grid from '@material-ui/core/Grid';
 
+import { useStylesForm } from '../../styles/homePage/form'
+
+
 
 
 const ShowHideButton = (props) => {
+  const classes = useStylesForm()
 
   const formType = props.formType
 
@@ -31,12 +35,12 @@ const ShowHideButton = (props) => {
         <FormControlLabel
           control={
             <Checkbox
-              icon={<AddIcon />}
+              icon={<AddIcon className={classes.addIcon} />}
               checkedIcon={<AddIcon />}
               checked={checked}
               onChange={handleChange}
               name="checked"
-              color="secondary"
+              // color="secondary"
             />
           }
           label="Advanced Search"
