@@ -2,14 +2,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export const useStylesIngredientsInput = makeStyles((theme) => ({
 
-  display: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    direction: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 30
-  },
+  // display: {
+  //   display: 'flex',
+  //   flexWrap: 'wrap',
+  //   direction: 'column',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   marginBottom: 30
+  // },
 
   input: {
     backgroundColor: 'rgba(255,255,255)',
@@ -43,6 +43,11 @@ export const useStylesIngredientsInput = makeStyles((theme) => ({
    
   },
   buttonSpacing: {
+    display: 'flex',
+    direction: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
     marginLeft: 10
   }
 

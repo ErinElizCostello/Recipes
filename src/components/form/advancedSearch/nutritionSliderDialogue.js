@@ -62,7 +62,7 @@ const NutritionSliderDialog = () => {
         <div className={classes.nutritionButtonIconSpacing}></div>
       </button>
       <Dialog
-        // className={classes.root}
+        className={classes.root}
         open={open}
         onClose={handleClose}
         scroll={scroll}

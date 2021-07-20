@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export const useStylesNutritionSliderDialogue = makeStyles((theme) => ({
   root: {
+    
     width: '100%',
     height: '100%',
     color: '#2e2e2e'

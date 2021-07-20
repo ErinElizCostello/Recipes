@@ -27,7 +27,6 @@ const ShowHideButton = (props) => {
         direction="row"
         justifyContent="center"
         alignItems="center"
-
       >
         <FormControlLabel
           control={
@@ -50,10 +49,10 @@ const ShowHideButton = (props) => {
           // >
           <Grid container
             display="flex"
-            direction="row"
+            direction="column"
             justifyContent="center"
             alignItems="center"
-
+            alignContent='center'
           >
             <AdvancedSearch />
           </Grid>

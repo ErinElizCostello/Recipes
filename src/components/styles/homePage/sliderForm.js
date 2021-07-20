@@ -1,8 +1,16 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export const useStylesSliderForm = makeStyles({
+export const useStylesSliderForm = makeStyles(theme => ({
   root: {
-    width: 300,
+[theme.breakpoints.up('xs')]: {
+      width: '100%',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      width: 300
+    },
+
+    // width: '100%',
   },
 
   labelSpacing: {
@@ -13,4 +21,4 @@ export const useStylesSliderForm = makeStyles({
     marginBottom:30, 
     marginTop: 30
   }
-})
+}))

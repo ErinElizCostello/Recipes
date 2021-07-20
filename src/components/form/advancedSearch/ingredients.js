@@ -69,10 +69,12 @@ const Ingredients = () => {
   //  }
 
   return (
-    <div className={classes.display}>
+    <div 
+    // className={classes.display}
+    >
       {error && <ErrorMessage error={error} />}
       {/* <div style={{}}> */}
-        {/* {Array.isArray(listOfIngredients) && listOfIngredients.length !== 0 ?
+      {/* {Array.isArray(listOfIngredients) && listOfIngredients.length !== 0 ?
           // saveChips()
           listOfIngredients.map(theIngredient =>
             <div key={theIngredient.id}>
@@ -86,24 +88,24 @@ const Ingredients = () => {
           : null
         } */}
       {/* </div> */}
-<div>
-      <Autocomplete
-        className={classes.input}
-        id="combo-box-demo"
-        options={ingredient}
-        getOptionLabel={(option) => option}
-        style={{ width: 300 }}
-        onSelect={e => onChange(e)}
-        // PaperComponent={paperComponent}
-        renderInput={(params) => <TextField {...params} label="Ingredients to use..." variant="outlined" />}
-      />
+      <div>
+        <Autocomplete
+          className={classes.input}
+          id="combo-box-demo"
+          options={ingredient}
+          getOptionLabel={(option) => option}
+          style={{ width: 300 }}
+          onSelect={e => onChange(e)}
+          // PaperComponent={paperComponent}
+          renderInput={(params) => <TextField {...params} label="Ingredients to use..." variant="outlined" />}
+        />
       </div>
-      <div 
-      className={classes.buttonSpacing}
+      <div
+        className={classes.buttonSpacing}
       >
-        
+
         <Button
-        className={classes.button}
+          className={classes.button}
           // variant="contained"
           // color="primary"
           onClick={() => addToList(value.item)}

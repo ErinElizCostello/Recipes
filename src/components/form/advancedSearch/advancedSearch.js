@@ -25,54 +25,66 @@ const AdvancedSearch = () => {
   const classes = useStylesAdvancedSearch()
   const width = withWidth()
 
-  const responsiveCols = () => {
-   
-
-    if (isWidthUp('lg', width)) {
-      return 9;
-    }
-
-    if (isWidthUp('xs', width)) {
-      return 1;
-    }
-  }
-
   return (
-    <div>
-      
-      <Ingredients />
-     
+    <div
+    // style={{ display: 'flex',
+    // direction:'column',
+    // flexWrap:'wrap',
+    // justifyContent:'flex-start',
+    // alignItems:'center'}}
+    >
       <Grid
-      container
-      display= 'flex'
-      flexWrap='wrap'
-      justifyContent= 'space-between'
-      overflow= 'hidden'
+        container
+        display='flex'
+        direction='column'
+        flexWrap='wrap'
+        justifyContent='center'
+        alignItems='center'
       >
-      <div
-        // className={classes.root}
-      >
-        {/* <div style={{marginLeft: 40}}></div> */}
-        <ImageList className={classes.gridList} cols={0}>
-        {/* <div className={classes.gridList}> */}
-        
-          {selectInformation.map(selectFormInformation => 
-          <ImageListItem key={Math.random()}>
-          {/* <div key={Math.random()}> */}
-            <SelectForm selectFormInformation={selectFormInformation.stuff} />
-            {/* </div> */}
-          </ImageListItem>
-          )}
-          <ImageListItem className={classes.nutrition}>
-          {/* <div className={classes.nutrition}> */}
-            <NutritionSliderDialog />
-          {/* </div> */}
-          </ImageListItem>
-          
-        {/* </div> */}
-        </ImageList>
-        {/* <div style={{marginRight: 40}}></div> */}
-      </div>
+
+        <Grid
+          container
+          display='flex'
+          direction='row'
+          flexWrap='wrap'
+          justifyContent='center'
+        >
+        <Ingredients />
+        </Grid>
+        <div className={classes.spaceBetweenIngredientsAndImageList}></div>
+        <Grid
+          container
+          display='flex'
+          flexWrap='wrap'
+          justifyContent='space-between'
+          overflow='hidden'
+        >
+          <div
+          // className={classes.root}
+          >
+            {/* <div style={{marginLeft: 40}}></div> */}
+            <ImageList className={classes.gridList} cols={0}>
+              {/* <div className={classes.gridList}> */}
+
+              {selectInformation.map(selectFormInformation =>
+                <ImageListItem key={Math.random()}>
+                  {/* <div key={Math.random()}> */}
+                  <SelectForm selectFormInformation={selectFormInformation.stuff} />
+                  {/* </div> */}
+                </ImageListItem>
+              )}
+              <ImageListItem className={classes.nutrition}>
+                {/* <div className={classes.nutrition}> */}
+                <NutritionSliderDialog />
+                {/* </div> */}
+              </ImageListItem>
+
+              {/* </div> */}
+            </ImageList>
+            {/* <div style={{marginRight: 40}}></div> */}
+          </div>
+        </Grid>
+
       </Grid>
       {/* </Grid> */}
       {/* </Grid> */}
@@ -88,26 +100,30 @@ export default AdvancedSearch;
 
 
 const useStylesAdvancedSearch = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    overflow: 'hidden',
-    // whiteSpace: 'nowrap'
-    // width: '100vw'
+  // root: {
+  //   display: 'flex',
+  //   flexWrap: 'wrap',
+  //   justifyContent: 'space-between',
+  //   overflow: 'hidden',
+  //   // whiteSpace: 'nowrap'
+  //   // width: '100vw'
 
-    // backgroundColor: 'white',
-    // opacity: .5
+  //   // backgroundColor: 'white',
+  //   // opacity: .5
+  // },
+
+  spaceBetweenIngredientsAndImageList: {
+    margin: 20
   },
 
-  cols: {
-    [theme.breakpoints.up('xs')]: {
-      width: 325
-    },
-    [theme.breakpoints.up('sm')]: {
-      width: 500
-    },
-  },
+  // cols: {
+  //   [theme.breakpoints.up('xs')]: {
+  //     width: 325
+  //   },
+  //   [theme.breakpoints.up('sm')]: {
+  //     width: 500
+  //   },
+  // },
 
   gridList: {
     // display: 'inline-block',
@@ -117,11 +133,11 @@ const useStylesAdvancedSearch = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       width: 325
     },
-    
+
     [theme.breakpoints.up('lg')]: {
       width: 1000
     },
-    
+
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
   },
