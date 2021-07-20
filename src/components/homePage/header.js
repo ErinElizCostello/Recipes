@@ -22,9 +22,9 @@ const Header = () => {
           direction='row'
           justifyContent='center'
         >
-          <Grid item xs={9} sm={6}>
+          <Grid item sm={6}>
           </Grid>
-          <Grid item xs={3} sm={6}>
+          <Grid item xs={12} sm={6}>
             <div className={classes.navbar}>
               {
                 localStorage.getItem('User') ?
