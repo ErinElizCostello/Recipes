@@ -1,10 +1,9 @@
 const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
-const passport = require('passport');
-const jwt = require('jsonwebtoken')
 const passportJWT = require("passport-jwt");
 const JWTStrategy = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
+
 
 module.exports = function (passport) {
 
@@ -31,7 +30,7 @@ module.exports = function (passport) {
               res.sendStatus(500);
               return
             }
-            
+
             if (!res) {
               return done(null, false, { message: 'Incorrect password' })
             }
@@ -68,10 +67,10 @@ module.exports = function (passport) {
               if (err) console.log(err)
 
               newUser.id = user.insertId;
-              
+
               return done(null, newUser)
             })
-          })      
+          })
         }
       });
     }));
@@ -81,8 +80,8 @@ module.exports = function (passport) {
     secretOrKey: process.env.ACCESS_TOKEN_SECRET
   },
     (jwtPayload, done) => {
-      db.query("SELECT * FROM users WHERE id = ?", [jwtPayload.id], function (err, user) {    
-        if (err) {        
+      db.query("SELECT * FROM users WHERE id = ?", [jwtPayload.id], function (err, user) {
+        if (err) {
           return done(err, false);
         }
         if (user) {
@@ -108,3 +107,8 @@ module.exports = function (passport) {
     connection.end();
   });
 }
+
+
+
+// const passport = require('passport');
+// const jwt = require('jsonwebtoken')

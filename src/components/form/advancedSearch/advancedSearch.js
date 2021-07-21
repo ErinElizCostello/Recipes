@@ -37,7 +37,7 @@ const AdvancedSearch = () => {
         container
         display='flex'
         direction='column'
-        flexWrap='wrap'
+        flexwrap='wrap'
         justifyContent='center'
         alignItems='center'
       >
@@ -46,7 +46,7 @@ const AdvancedSearch = () => {
           container
           display='flex'
           direction='row'
-          flexWrap='wrap'
+          flexwrap='wrap'
           justifyContent='center'
         >
         <Ingredients />
@@ -55,7 +55,7 @@ const AdvancedSearch = () => {
         <Grid
           container
           display='flex'
-          flexWrap='wrap'
+          flexwrap='wrap'
           justifyContent='space-between'
           overflow='hidden'
         >

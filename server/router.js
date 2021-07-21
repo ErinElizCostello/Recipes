@@ -1,18 +1,9 @@
 require('dotenv').config()
-
 const express = require('express');
 const router = express.Router();
-
 const passport = require('passport');
-
 const jwt = require('jsonwebtoken')
-const passportJWT = require("passport-jwt");
-const JWTStrategy = passportJWT.Strategy;
-const ExtractJWT = passportJWT.ExtractJwt;
-// module.exports = function(passport){
 
-
-//login
 
 router.get('/login', (req, res, next) => {
   if (req.isAuthenticated()) {
@@ -67,15 +58,10 @@ router.post('/login', (req, res, next) => {
 })
 
 
-//sign up
-
 router.post('/signup', passport.authenticate('local-signup', {
 }), (req, res) => {
   res.json({ message: 'user is successfully signed in' })
 });
-
-
-//delete
 
 router.delete('/deleteUserAccount/:id', (req, res) => {
   let sqlDeleteFromUsers = "DELETE FROM users WHERE id = ?;"
@@ -96,7 +82,6 @@ router.delete('/deleteUserAccount/:id', (req, res) => {
 })
 
 
-////admin
 router.get('/admin', (req, res) => {
   let sql = "SELECT id, username FROM users";
   db.query(sql, (err, results, fields) => {
@@ -109,7 +94,6 @@ router.get('/admin', (req, res) => {
   })
 })
 
-////favorites
 
 router.get('/favorites', (req, res) => {
   let sql = "SELECT * FROM saved_recipes";
@@ -123,9 +107,11 @@ router.get('/favorites', (req, res) => {
   })
 })
 
+
 router.get('/checkUser', passport.authenticate('jwt', { session: false }), (req, res) => {
-  res.json('is it working')
+  res.json('working')
 });
+
 
 router.post('/getFavorites', (req, res) => {
   let sql = "SELECT * FROM saved_recipes WHERE user_id = ?";
@@ -142,6 +128,7 @@ router.post('/getFavorites', (req, res) => {
   })
 })
 
+
 router.post('/favorites', (req, res) => {
   let sql = 'INSERT INTO saved_recipes(user_id, recipe_id_api) VALUES(?)'
   let values = [req.body.user_id, req.body.recipe_id_api]
@@ -153,6 +140,7 @@ router.post('/favorites', (req, res) => {
     })
   })
 })
+
 
 router.delete('/favorites/:id', (req, res) => {
   let sql = "DELETE FROM saved_recipes WHERE recipe_id_api = ?";
@@ -166,4 +154,12 @@ router.delete('/favorites/:id', (req, res) => {
   })
 })
 
+
 module.exports = router
+
+
+
+
+// const passportJWT = require("passport-jwt");
+// const JWTStrategy = passportJWT.Strategy;
+// const ExtractJWT = passportJWT.ExtractJwt;

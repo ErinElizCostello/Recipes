@@ -41,7 +41,7 @@ const GeneralSearch = () => {
         InputProps={{
           className: classes.input,
           startAdornment: (
-            <InputAdornment>
+            <InputAdornment position='start'>
             <SubmitButton />
             </InputAdornment>
           )

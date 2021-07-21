@@ -77,7 +77,7 @@ const NutritionSliderDialog = () => {
             tabIndex={-1}
           >
             {sliderInformationNutrition.map(nutritionSlider =>
-              <div className={classes.sliderForm}><SliderForm sliderInformation={nutritionSlider} /></div>)}
+              <div key={Math.random()} className={classes.sliderForm}><SliderForm sliderInformation={nutritionSlider} /></div>)}
           </DialogContentText>
         </DialogContent>
         <DialogActions>

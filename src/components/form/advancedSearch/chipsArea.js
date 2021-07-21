@@ -120,12 +120,12 @@ const ChipsArea = () => {
       <Grid container
         display="flex"
         direction="row"
-        flexWrap="wrap"
+        flexwrap="wrap"
         >
       {
         formTypesSingleOption.map(formType =>
           !Array.isArray(formType) && !formType.length ?
-            <div className={classes.chipMargin}>
+            <div className={classes.chipMargin} key={Math.random()}>
               <Chip
                 label={
                   formType === maximumReadyTime ?
@@ -143,7 +143,7 @@ const ChipsArea = () => {
         formTypesMultipleOptions.map(formType =>
           formType.length ?
             formType.map(item =>
-              <div className={classes.chipMargin}>
+              <div className={classes.chipMargin} key={Math.random()}>
                 <Chip
                   label={
                     formType === intolerances ?
@@ -161,7 +161,7 @@ const ChipsArea = () => {
       {
         updatedChips.length > updateRef.length || 
         sliderRanges ? Object.keys(sliderRanges).map(slider =>
-          <div className={classes.chipMargin}>
+          <div className={classes.chipMargin} key={Math.random()}>
             <Chip
               label={`${slider}: ${sliderRanges[slider].min} - ${sliderRanges[slider].max}`}
               onDelete={() => onDeleteItem('slider', slider)}

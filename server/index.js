@@ -3,12 +3,10 @@ const mysql = require('mysql');
 const express = require('express');
 const cors = require('cors');
 const passport = require('passport');
-const bodyParser = require('body-parser');;
 const router = require('./router.js');
 const app = express();
 
 
-// app.use(bodyParser.json())
 app.use(express.json())
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -33,7 +31,6 @@ db = mysql.createConnection({
 
 require('./passport-config')(passport);
 
-// app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.urlencoded({ extended: true }))
 app.use(passport.initialize());
 
@@ -45,3 +42,10 @@ app.use('/', router);
 const PORT = process.env.PORT || 3001
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+
+
+
+
+// app.use(bodyParser.json())
+// const bodyParser = require('body-parser');;
+// app.use(bodyParser.urlencoded({ extended: true }))
