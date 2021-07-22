@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import CardInformation from './cardInformation'
 import SeeMoreButton from './seeMoreButton'
-import LikeFavoriteRecipe from '../likeFavoriteRecipe/likeFavoriteRecipe'
+import LikeFavoriteRecipe from '../likeFavoriteRecipe'
 
 import { useStylesRecipeCard } from '../styles/recipeCard/recipeCard'
 import Card from '@material-ui/core/Card';
@@ -17,7 +17,6 @@ const RecipeCard = (props) => {
   localStorage.setItem('id', JSON.stringify(id))
   let state = useSelector(state => state)
   localStorage.setItem('state', JSON.stringify(state))
-
 
   return (
     <div>

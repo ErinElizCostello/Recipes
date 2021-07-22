@@ -1,6 +1,6 @@
 import React from 'react';
-import { useStylesSeeRecipeHereButton } from '../styles/recipePage/seeRecipeHereButton'
 
+import { useStylesSeeRecipeHereButton } from '../styles/recipePage/seeRecipeHereButton'
 import Button from '@material-ui/core/Button';
 
 
@@ -11,7 +11,12 @@ const SeeRecipeHereButton = (props) => {
 
   return (
     <div className={classes.seeRecipeHereButtonSpacing}>
-      <Button variant="contained" className={classes.seeRecipeHereButton} href={sourceUrl} target="_blank">
+      <Button
+        variant="contained"
+        className={classes.seeRecipeHereButton}
+        href={sourceUrl}
+        target="_blank"
+      >
         See Recipe
       </Button>
     </div>

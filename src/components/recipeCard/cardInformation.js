@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {useStylesCardInformation} from '../styles/recipeCard/cardInformation'
-
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -31,7 +30,6 @@ const CardInformation = (props) => {
               Ready Time: {readyTimeInMinutes}mn 
               </Typography><br /><br />
               <Typography dangerouslySetInnerHTML={{ __html: recipeSummary.slice(0, 150) + '...' }} />
-            
           </CardContent>
         </CardActionArea>
   )

@@ -1,20 +1,21 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import FavoritesContainer from '../components/favorites/favoritesContainer'
+
+import FavoritesPage from '../components/favorites/favoritesPage'
 
 
-const SecuredRouteToFavorites = () => { 
+const SecuredRouteToFavorites = () => {
   return (
     <div>
-      <Route 
+      <Route
         render={() =>
-          localStorage.getItem('User') 
-          ?
-          (<FavoritesContainer />)
-          :
-          (<Redirect to={{pathname: '/login'}}></Redirect>)}
-          >
-        </Route>
+          localStorage.getItem('User')
+            ?
+            (<FavoritesPage />)
+            :
+            (<Redirect to={{ pathname: '/login' }}></Redirect>)}
+      >
+      </Route>
     </div>
   );
 }

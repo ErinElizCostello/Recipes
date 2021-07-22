@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { useStylesHeaderHomePage } from '../styles/homePage/header'
-
 import SettingsMenu from './settingsMenu'
 import LoggedOutOptions from './loggedOutOptions';
-import Title from './title'
 import LoggedInOptions from './loggedInOptions';
+import Title from './title'
 
+
+import { useStylesHeaderHomePage } from '../styles/homePage/header'
 import Grid from '@material-ui/core/Grid';
 import SettingsIcon from '@material-ui/icons/Settings';
 
@@ -22,8 +22,9 @@ const Header = () => {
           direction='row'
           justifyContent='center'
         >
-          <Grid item sm={6}>
-          </Grid>
+
+          <Grid item sm={6}></Grid>
+
           <Grid item xs={12} sm={6}>
             <div className={classes.navbar}>
               {
@@ -36,11 +37,13 @@ const Header = () => {
               </SettingsMenu>
             </div>
           </Grid>
-          <Grid item xs={12} sm={12}>
+
+          <Grid item xs={12} sm={12}>           
             <div className={classes.titleSpacing}>
               <Title />
             </div>
           </Grid>
+
         </Grid>
       </div>
     </div>

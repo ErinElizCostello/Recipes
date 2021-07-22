@@ -9,8 +9,6 @@ export const ingredientsList = (state = [], action) => {
       return [...action.data]
     case CLEAR_INGREDIENTS_LIST:
       return [...action.data]
-    // case 'TOGGLE_LIST':
-    //   return action.data
     default:
       return state;
   }

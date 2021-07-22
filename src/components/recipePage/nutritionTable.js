@@ -27,6 +27,7 @@ const NutritionTable = (props) => {
     <div className={classes.nutrition}>
           <TableContainer component={Paper}>
             <Table className={classes.nutrition} size="small" aria-label="a dense table">
+              
               <TableHead>
                 <TableRow>
                   <TableCell>Nutrition</TableCell>
@@ -34,6 +35,7 @@ const NutritionTable = (props) => {
                   <TableCell align="right">Percent of Daily Needs</TableCell>
                 </TableRow>
               </TableHead>
+              
               <TableBody>
                 {rows.map((row) => (
                   <TableRow key={row.item}>
@@ -45,6 +47,7 @@ const NutritionTable = (props) => {
                   </TableRow>
                 ))}
               </TableBody>
+              
             </Table>
           </TableContainer>
     </div>

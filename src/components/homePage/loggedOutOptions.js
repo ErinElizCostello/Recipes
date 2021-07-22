@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { useStylesLoginAndSignUpButtons } from '../styles/homePage/logInAndSignUpButtons'
 import Typography from '@material-ui/core/Typography';
 

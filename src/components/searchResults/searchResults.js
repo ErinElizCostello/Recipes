@@ -1,18 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux'
 
-import BackButton from '../backButton/backButton'
+import BackButton from '../backButton'
 import Spinner from '../spinner';
 import NoResults from './noResults';
 import ErrorMessage from '../errorMessage'
-
 import RecipeCard from "../recipeCard/recipeCard"
 
 import { useStylesSearchResults } from '../styles/searchResults/searchresults'
-
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
 
 const SearchResults = () => {
@@ -20,13 +18,11 @@ const SearchResults = () => {
 
   const recipeSearchInfo = useSelector(state => state.recipeSearch)
   const recipes = useSelector(state => state.recipeSearch.data)
-  const loading = useSelector(state => state.recipeSearch.pending)
   const emptySearch = useSelector(state => state.recipeSearch.emptySearch)
   const showSearches = useSelector(state => state.recipeSearch.data)
   const noResults = useSelector(state => state.recipeSearch.noResults)
 
   const errorMessage = recipeSearchInfo && Object.assign(recipeSearchInfo).error
-
 
   return (
     <div >
@@ -58,7 +54,6 @@ const SearchResults = () => {
                     alignItems="flex-start"
                   >
                     {
-                      // loading ? <Spinner /> :
                       recipes && recipes.map(e =>
                         <Grid key={Math.random()} item xs={12} sm={3}>
                           <RecipeCard key={Math.random()} recipe={e} />

@@ -1,13 +1,14 @@
-import Button from '@material-ui/core/Button';
 import React from 'react';
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom';
 
-//actions
 import { recipeID } from '../../state/actions/recipeID'
+
+import Button from '@material-ui/core/Button';
 
 
 const SeeMoreButton = (props) => {
+  
   const dispatch = useDispatch()
   
   const recipeIDForAPI = props.recipeInfo.recipe.id

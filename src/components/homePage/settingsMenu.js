@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import {ADMIN_NAME} from '../../APIs/superSECRETKEYZZZ'
+import { ADMIN_NAME } from '../../APIs/superSECRETKEYZZZ'
 
 import clsx from 'clsx';
 
@@ -19,6 +19,7 @@ import FaceIcon from '@material-ui/icons/Face';
 
 const SettingsMenu = () => {
   const classes = useStylesSettingsMenu();
+
   const [state, setState] = useState({
     drawer: false,
   });
@@ -39,19 +40,19 @@ const SettingsMenu = () => {
     >
       <List>
         {
-          localStorage.getItem('User') && JSON.parse(localStorage.getItem('User')).payload.user === ADMIN_NAME 
-          ?
-      <Link
-          to='/admin'
-          className={classes.text}
-        >
-          <ListItem button key={"Delete my account"}>
-            <ListItemIcon>{<FaceIcon />}</ListItemIcon>
-            <ListItemText primary="Admin page" />
-          </ListItem>
-        </Link>
-        : null
-}
+          localStorage.getItem('User') && JSON.parse(localStorage.getItem('User')).payload.user === ADMIN_NAME
+            ?
+            <Link
+              to='/admin'
+              className={classes.text}
+            >
+              <ListItem button key={"Delete my account"}>
+                <ListItemIcon>{<FaceIcon />}</ListItemIcon>
+                <ListItemText primary="Admin page" />
+              </ListItem>
+            </Link>
+            : null
+        }
         <Link
           to={localStorage.getItem('User') ? '/deleteYourAccount' : '/login'}
           className={classes.text}
@@ -62,8 +63,6 @@ const SettingsMenu = () => {
           </ListItem>
         </Link>
       </List>
-
-
     </div>
   );
 
@@ -75,7 +74,6 @@ const SettingsMenu = () => {
             <SettingsIcon />
           </Button>
           <Drawer anchor={'right'} open={state['right']} onClose={toggleDrawer('right', false)}>
-
             {list('right')}
           </Drawer>
         </Fragment>

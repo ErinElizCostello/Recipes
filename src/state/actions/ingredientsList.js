@@ -21,10 +21,3 @@ export const clearIngredientsList = (empty) => {
     data: empty
   })
 }
-
-// export const toggleList = ( listValues ) => {
-//   return({
-//     type: 'TOGGLE_LIST',
-//     data: listValues
-//   })
-// }

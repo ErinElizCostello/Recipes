@@ -1,9 +1,9 @@
 import React from 'react';
 
-import BackButton from '../backButton/backButton'
+import BackButton from '../backButton'
 import Image from './image'
 import Title from './title'
-import LikeFavoriteRecipe from '../likeFavoriteRecipe/likeFavoriteRecipe'
+import LikeFavoriteRecipe from '../likeFavoriteRecipe'
 import SeeRecipeHereButton from './seeRecipeHereButton'
 import ShareButtons from './shareButtons'
 import IngredientsList from './ingredientsList'
@@ -34,15 +34,13 @@ const RecipePage = () => {
   return (
     <div>
       <BackButton backToWhere={localState.recipeSearch.data.length ? 'searchResults' : 'favorites'} />
-      
-      {/* <Divider variant="middle" /> */}
+
       <div className={classes.whiteSpaceBtwnTopDividerAndImage} />
 
       <div className={classes.general}>
         <Container maxWidth="lg">
-          <Grid container>
 
-            {/* Row 1 */}
+          <Grid container>
             <Grid item sm={1} ></Grid>
             <Grid item xs={12} sm={5}>
               <Image recipeInformation={searchPageOrFavoritesPage()} />
@@ -57,7 +55,7 @@ const RecipePage = () => {
             </Grid>
             <Grid item sm={1} ></Grid>
 
-            {/* Row 2 */}
+
             <Grid item sm={2}></Grid>
             <Grid item xs={12} sm={3}>
               <IngredientsList recipeInformation={searchPageOrFavoritesPage()} />
@@ -67,32 +65,27 @@ const RecipePage = () => {
               <NutritionDialogue recipeInformation={searchPageOrFavoritesPage()} />
             </Grid>
             <Grid item sm={1}></Grid>
-
           </Grid>
 
-          <Grid container>
 
-            {/* Row 3 */}
+          <Grid container>
             <Grid item sm={2}></Grid>
             <Grid item xs={12} sm={8}>
               <Divider variant="middle" />
             </Grid>
             <Grid item sm={2}></Grid>
-
           </Grid>
 
-          <Grid container>
 
-            {/* Row 4 */}
+          <Grid container>
             <Grid item sm={2}></Grid>
             <Grid item xs={12} sm={8}>
               <InstructionsHeader recipeInformation={searchPageOrFavoritesPage()} />
               <Instructions recipeInformation={searchPageOrFavoritesPage()} />
             </Grid>
             <Grid item sm={2}></Grid>
-
           </Grid>
-          
+
         </Container>
 
         <Divider className={classes.divider} variant="middle" />

@@ -94,8 +94,6 @@ module.exports = function (passport) {
   );
 
   passport.serializeUser((user, cb) => {
-    console.log('serialize:')
-    console.log(user);
     cb(null, user.id)
   })
 
@@ -107,8 +105,3 @@ module.exports = function (passport) {
     connection.end();
   });
 }
-
-
-
-// const passport = require('passport');
-// const jwt = require('jsonwebtoken')

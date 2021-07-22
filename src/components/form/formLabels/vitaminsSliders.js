@@ -94,42 +94,6 @@ export const sliderInformationVitamins = [
     minimum: 0,
     maximum: 40
   },
-  // {
-  //   checkBoxLabel: "Vitamin B1",
-  //   actionName: sliders,
-  //   deleteAction: slidersDelete,
-  //   sliderLabel: 'Milligrams of Vitamin B1',
-  //   marks: [
-  //     {
-  //       value: 0,
-  //       label: '0'
-  //     },
-  //     {
-  //       value: 1.5,
-  //       label: '1.5'
-  //     }
-  //   ],
-  //   minimum: 0,
-  //   maximum: 1.5
-  // },
-  // {
-  //   checkBoxLabel: "Vitamin B2",
-  //   actionName: sliders,
-  //   deleteAction: slidersDelete,
-  //   sliderLabel: 'Milligrams of Vitamin B2',
-  //   marks: [
-  //     {
-  //       value: 0,
-  //       label: '0'
-  //     },
-  //     {
-  //       value: 100,
-  //       label: '100'
-  //     }
-  //   ],
-  //   minimum: 0,
-  //   maximum: 100
-  // },
   {
     checkBoxLabel: "Vitamin B3",
     actionName: sliders,
@@ -148,24 +112,6 @@ export const sliderInformationVitamins = [
     minimum: 0,
     maximum: 6
   },
-  // {
-  //   checkBoxLabel: "Vitamin B5",
-  //   actionName: sliders,
-  //   deleteAction: slidersDelete,
-  //   sliderLabel: 'Milligrams of Vitamin B5',
-  //   marks: [
-  //     {
-  //       value: 0,
-  //       label: '0'
-  //     },
-  //     {
-  //       value: 100,
-  //       label: '100'
-  //     }
-  //   ],
-  //   minimum: 0,
-  //   maximum: 100
-  // },
   {
     checkBoxLabel: "Vitamin B6",
     actionName: sliders,

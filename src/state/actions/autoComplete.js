@@ -13,10 +13,3 @@ export const autoCompleteSuccess = ACData => {
     data: ACData
   }
 }
-
-// export const autoCompleteError = error => {
-//   return {
-//     type: AUTOCOMPLETE_ERROR,
-//     error
-//   }
-// }

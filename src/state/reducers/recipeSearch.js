@@ -9,7 +9,6 @@ const initialState = {
     noResults: false
 }
 
-
 export function recipeSearch(state = initialState, action) {
     switch (action.type) {
         case RECIPE_SEARCH_PENDING:

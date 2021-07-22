@@ -2,18 +2,18 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 
-const SecuredRouteToAdminPage = (props) => { 
+const SecuredRouteToAdminPage = (props) => {
   return (
     <div>
-      <Route 
+      <Route
         render={() =>
-          localStorage.getItem('User') && JSON.parse(localStorage.getItem('User')).payload.user === ADMIN_NAME 
-          ?
-          (<AdminPage /> )
-          :
-          (<Redirect to={{pathname: '/home'}}></Redirect>)}
-          >
-        </Route>
+          localStorage.getItem('User') && JSON.parse(localStorage.getItem('User')).payload.user === ADMIN_NAME
+            ?
+            (<AdminPage />)
+            :
+            (<Redirect to={{ pathname: '/home' }}></Redirect>)}
+      >
+      </Route>
     </div>
   );
 }

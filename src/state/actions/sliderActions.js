@@ -14,8 +14,6 @@ export const sliders = (listValues, label) => dispatch => {
   })
 }
 
-
-
 export const slidersDelete = label => {
   console.log('label', label)
 
@@ -28,23 +26,4 @@ export const slidersDelete = label => {
     type: DELETE_SLIDERS,
     data: sliderObj
   })
-
 }
-
-
-
-
-
-
-
-  // let keys = Object.keys(theData)
-  // let values = Object.values(theData)
-  
-  // let newArr = []
-
-  // keys.forEach(e => newArr.push({theThing: e, stuff: values[keys.indexOf(e)]}))
-  
-
-  // let newNewArr = newArr.filter(e => e.theThing !== label)
-  
-  // newNewArr.forEach(e => newObj[e.theThing] = e.stuff)

@@ -35,9 +35,11 @@ const NutritionDialogue = (props) => {
 
   return (
     <div className={classes.seeNutritionButtonSpacing}>
+
       <Button className={classes.seeNutritionButton} onClick={handleClickOpen()}>
         Nutrition Information
       </Button>
+      
       <Dialog
         open={open}
         onClose={handleClose}
@@ -56,6 +58,7 @@ const NutritionDialogue = (props) => {
           </DialogContentText>
         </DialogContent>
       </Dialog>
+      
     </div>
   );
 }

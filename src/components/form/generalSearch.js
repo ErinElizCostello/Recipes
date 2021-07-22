@@ -3,15 +3,16 @@ import { useDispatch } from 'react-redux'
 
 import { generalSearch } from '../../state/actions/generalSearch'
 
-import { useStylesGeneralSearch } from '../styles/homePage/generalSearchInput'
-
-import TextField from '@material-ui/core/TextField';
 import SubmitButton from './submitButton'
+
+import { useStylesGeneralSearch } from '../styles/homePage/generalSearchInput'
+import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
 
 const GeneralSearch = () => {
   const classes = useStylesGeneralSearch()
+
   const dispatch = useDispatch()
 
   const [value, setValue] = useState('')
@@ -25,10 +26,7 @@ const GeneralSearch = () => {
   }
 
   return (
-    <div 
-    // className={classes.display}
-    >
-
+    <div>
       <TextField
         id="input-with-icon-textfield"
         className={classes.input}
@@ -37,12 +35,11 @@ const GeneralSearch = () => {
         onChange={e => onChange(e)}
         value={value}
         placeholder="Search your favorite recipes"
-        
         InputProps={{
           className: classes.input,
           startAdornment: (
             <InputAdornment position='start'>
-            <SubmitButton />
+              <SubmitButton />
             </InputAdornment>
           )
         }}

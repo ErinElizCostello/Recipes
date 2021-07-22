@@ -19,13 +19,15 @@ const InstructionsHeader = (props) => {
         direction='row'
         alignItems='center'
       >
+
         <Grid item xs={12} sm={4}>
           <div>
             <Typography variant='h5' className={classes.instructionsTitle}>
               Instructions
-                </Typography>
+            </Typography>
           </div>
         </Grid>
+
         <Grid item xs={3} sm={2}>
           <div>
             <Typography className={classes.basicDescription}>
@@ -33,9 +35,11 @@ const InstructionsHeader = (props) => {
             </Typography>
           </div>
         </Grid>
+
         <Grid item xs={1} sm={1}>
           <div className={classes.divider}></div>
         </Grid>
+
         <Grid item xs={3} sm={2}>
           <div>
             <Typography className={classes.basicDescription}>
@@ -43,9 +47,11 @@ const InstructionsHeader = (props) => {
             </Typography>
           </div>
         </Grid>
+
         <Grid item xs={1} sm={1}>
           <div className={classes.divider}></div>
         </Grid>
+
         <Grid item xs={3} sm={2}>
           <div>
             <Typography className={classes.basicDescription}>
@@ -53,6 +59,7 @@ const InstructionsHeader = (props) => {
             </Typography>
           </div>
         </Grid>
+        
       </Grid>
     </div>
   );

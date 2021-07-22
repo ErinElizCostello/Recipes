@@ -8,21 +8,16 @@ import { deleteMealType } from '../../../state/actions/mealType'
 import { deleteDiet } from '../../../state/actions/dietType'
 import { deleteMaximumReadyTime } from '../../../state/actions/maximumReadyTime'
 import { slidersDelete } from '../../../state/actions/sliderActions'
-import { showSliderSelectionsInChips } from '../../../state/actions/showSliderSelectionsInChips'
-
 
 import { useStylesChipsArea } from '../../styles/homePage/chipsArea'
 import Chip from '@material-ui/core/Chip';
 import Grid from '@material-ui/core/Grid';
 
 
-
 const ChipsArea = () => {
   const classes = useStylesChipsArea()
 
   const dispatch = useDispatch()
-
-  // const SliderInfo = useSelector(state => state.sliders)
 
   const maximumReadyTime = useSelector(state => state.maximumReadyTime)
   const ingredients = useSelector(state => state.ingredientsList)
@@ -34,42 +29,20 @@ const ChipsArea = () => {
   const showSliderChips = useSelector(state => state.showSliderSelectionsInChips)
 
   let sliderRanges = null
-
-
   sliderRanges = Object.assign(slider)
-  // const [moreChips, setMoreChips] = useState()
-
-  // if(showSliderChips) {sliderRanges = Object.assign(slider)}
-  // showSliderChips ? sliderRanges = Object.assign(slider) : null
-  // const setSliderRangesInChips = () => {
-
-  //   if (showSliderChips || updatedChips) {
-  //     sliderRanges = Object.assign(slider)
-  //   }
-  //   // dispatch(showSliderSelectionsInChips(false))
-  // }
-
-  // setSliderRangesInChips()
-
+    
+  const [updatedChips, setUpdatedChips] = useState([])
   /// updateRef creates a reference for updatedChips so that the sliderRanges object will update with the new list of nutrition selections if one of them is deleted (see line 153)
   const [updateRef, setUpdateRef] = useState([])
-  const [updatedChips, setUpdatedChips] = useState([])
 
   const setSliderRangesInChipsAfterDeletingOne = () => {
     sliderRanges = null
     sliderRanges = Object.assign(slider)
     setUpdatedChips([...updatedChips, 'x'])
-    // setUpdatedChips(false)
-    console.log('hellllooooo', sliderRanges)
-    // falseChips()
   }
-
-  // const falseChips = () => setUpdatedChips(false)
 
   const formTypesSingleOption = [dietTypes, mealType, maximumReadyTime]
   const formTypesMultipleOptions = [ingredients, cuisines, intolerances]
-
-  // console.log(slider)
 
   const onDeleteItem = (formType, id) => {
     if (formType === ingredients) {
@@ -100,23 +73,13 @@ const ChipsArea = () => {
     }
 
     if (formType === 'slider') {
-
-      // sliderRanges = Object.keys(sliderRanges).filter(theSlider => theSlider !== slider)
       dispatch(slidersDelete(id))
-      // sliderRanges = null
-      // sliderRanges = Object.assign(slider)
       setSliderRangesInChipsAfterDeletingOne()
-      // dispatch(showSliderSelectionsInChips(false))      // sliderRanges = Object.assign(slider)
     }
-
   }
 
-  // const badChips = () => setUpdatedChips(false)
-
   return (
-    <div 
-    // className={classes.display}
-    >
+    <div>
       <Grid container
         display="flex"
         direction="row"
@@ -168,8 +131,6 @@ const ChipsArea = () => {
               color="secondary"
             />
           </div>
-          // ,
-          // setUpdateRef([...updateRef, 'x'])
         ) : null
       }
       </Grid>
@@ -178,38 +139,3 @@ const ChipsArea = () => {
 }
 
 export default ChipsArea;
-
-
-{/* <div>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => onClearList()}
-        >
-          Clear List
-      </Button> */}
-
-// const onClearList = () => {
-  //   dispatch(clearIngredientsList([]))
-  //   dispatch(clearCuisine([]))
-  //   dispatch(clearIntolerances([]))
-  //   dispatch(clearMealType([]))
-  //   dispatch(clearDiet([]))
-  // }
-
-
- // sliderArray.length ? 
-          // sliderArray.map(nutrition => 
-            // <Chip
-            //         label={
-                      // `${
-                        // 'Nutrition applied'
-                    //   }: 
-                    // ${slider[nutrition][min]} - ${slider[nutrition][max]}`
-                  // }
-                  //   onDelete={() => onDeleteItem('sliders', slider)}
-                  //   color="secondary"
-                  // />
-          // )
-          // : null
-        // }

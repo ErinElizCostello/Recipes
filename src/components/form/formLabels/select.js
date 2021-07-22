@@ -1,6 +1,5 @@
 ///All of the form information and labels for the select component
 
-
 import {maximumReadyTime, deleteMaximumReadyTime} from '../../../state/actions/maximumReadyTime'
 import { dietTypeList, deleteDiet, clearDiet } from '../../../state/actions/dietType'
 import { cuisineList, deleteCuisine, clearCuisine } from '../../../state/actions/cuisines'

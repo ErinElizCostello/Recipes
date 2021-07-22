@@ -1,7 +1,8 @@
-import { Typography } from '@material-ui/core';
 import React from 'react';
 
 import {useStylesNoResults} from '../styles/homePage/noResults'
+import Typography from '@material-ui/core/Typography';
+
 
 const NoResults = () => {
   const classes = useStylesNoResults()

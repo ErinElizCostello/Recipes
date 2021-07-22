@@ -1,6 +1,7 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+
 import { useStylesTitle } from '../styles/recipePage/title'
+import Typography from '@material-ui/core/Typography';
 
 
 const Title = (props) => {

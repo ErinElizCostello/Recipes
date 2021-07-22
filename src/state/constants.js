@@ -58,5 +58,3 @@ export const CLEAR_MEAL_TYPE = 'CLEAR_MEAL_TYPE';
 
 export const SET_SLIDERS = 'SET_SLIDERS';
 export const DELETE_SLIDERS = 'DELETE_SLIDERS';
-
-

@@ -14,7 +14,6 @@ import { favoritesCodes } from './favoritesCodes'
 import { userFavorites } from './userFavorites'
 import { chips } from './chips'
 import {showSliderSelectionsInChips} from './showSliderSelectionsInChips'
-// import { loggedOutDialogue } from './loggedOutDialogue'
 
 
 const rootReducer = combineReducers({
@@ -33,7 +32,6 @@ const rootReducer = combineReducers({
   userFavorites,
   chips,
   showSliderSelectionsInChips
-  // loggedOutDialogue
 });
 
 export default rootReducer

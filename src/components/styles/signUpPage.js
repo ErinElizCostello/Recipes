@@ -27,7 +27,7 @@ export const useStylesSignUpPage = makeStyles((theme) => ({
     textAlign: 'center'
   },
 
-
+  
   //form
   formUsername: {
     '& > *': {

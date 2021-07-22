@@ -9,7 +9,6 @@ export const login = (username, password) => {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      // 'Authorization': `JWT ${access}`
     }
   })
     .then(response => response.json())

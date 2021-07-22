@@ -1,7 +1,6 @@
 import { recipeSearchPending, recipeSearchSuccess, recipeSearchError, recipeSearchEmptySearch, recipeSearchNoResults } from './recipeSearch.js';
 import { searchRecipes } from '../../APIs/spoonacular/searchRecipes'
 import store from '../../store'
-import { useSelector } from 'react-redux';
 
 
 export const formatFormInformation = (theState) => dispatch => {
@@ -112,7 +111,6 @@ export const formatFormInformation = (theState) => dispatch => {
 
   formInformation += removesSpacesFromSliders
 
-
   //use the form information to search recipes from spoonacular API
   searchRecipes(formInformation)
   .then(res => {
@@ -122,10 +120,9 @@ export const formatFormInformation = (theState) => dispatch => {
     return res.json()
   })
   .then(recipes => {
-    // console.log('thenonrecipes', recipes)
     dispatch(recipeSearchError(null))
     dispatch(recipeSearchSuccess(recipes.results))
-    
+
     if(!recipes.totalResults) {
       dispatch(recipeSearchNoResults(true))
     } else {

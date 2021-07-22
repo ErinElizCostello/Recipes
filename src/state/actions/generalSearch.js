@@ -6,24 +6,3 @@ export const generalSearch = ( listValues ) => {
     data: listValues
   })
 }
-
-// export const deleteGeneralSearchItem = ( listValues ) => {
-//   return({
-//     type: 'DELETE_GEN_SEARCH_ITEM',
-//     data: listValues
-//   })
-// }
-
-// export const clearGeneralSearchList = (empty) => {
-//   return({
-//     type: 'CLEAR_GEN_SEARCH_LIST',
-//     data: empty
-//   })
-// }
-
-// export const toggleList = ( listValues ) => {
-//   return({
-//     type: 'TOGGLE_GEN_SEARCH_LIST',
-//     data: listValues
-//   })
-// }

@@ -82,19 +82,6 @@ router.delete('/deleteUserAccount/:id', (req, res) => {
 })
 
 
-router.get('/admin', (req, res) => {
-  let sql = "SELECT id, username FROM users";
-  db.query(sql, (err, results, fields) => {
-    if (err) throw (err);
-    res.json({
-      status: 200,
-      results,
-      message: "current users"
-    })
-  })
-})
-
-
 router.get('/favorites', (req, res) => {
   let sql = "SELECT * FROM saved_recipes";
   db.query(sql, (err, results, fields) => {
@@ -155,11 +142,16 @@ router.delete('/favorites/:id', (req, res) => {
 })
 
 
+router.get('/admin', (req, res) => {
+  let sql = "SELECT id, username FROM users";
+  db.query(sql, (err, results, fields) => {
+    if (err) throw (err);
+    res.json({
+      status: 200,
+      results,
+      message: "current users"
+    })
+  })
+})
+
 module.exports = router
-
-
-
-
-// const passportJWT = require("passport-jwt");
-// const JWTStrategy = passportJWT.Strategy;
-// const ExtractJWT = passportJWT.ExtractJwt;

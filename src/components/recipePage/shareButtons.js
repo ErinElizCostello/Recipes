@@ -15,6 +15,7 @@ const ShareButtons = (props) => {
 
   return (
     <div className={classes.general}>
+
       <div className={classes.shareButtons}>
         <EmailShareButton
           url={`http://localhost:3000/recipePage/${recipeId}`}
@@ -24,6 +25,7 @@ const ShareButtons = (props) => {
           <EmailIcon size={32} round={true} />
         </EmailShareButton>
       </div>
+
       <div className={classes.shareButtons}>
         <FacebookShareButton
           url={`http://localhost:3000/recipePage/${recipeId}`}
@@ -32,6 +34,7 @@ const ShareButtons = (props) => {
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
       </div>
+
       <div className={classes.shareButtons}>
         <PinterestShareButton
           url={`http://localhost:3000/recipePage/${recipeId}`}
@@ -41,6 +44,7 @@ const ShareButtons = (props) => {
           <PinterestIcon size={32} round={true} />
         </PinterestShareButton>
       </div>
+
       <div className={classes.shareButtons}>
         <TwitterShareButton
           url={`http://localhost:3000/recipePage/${recipeId}`}
@@ -49,6 +53,7 @@ const ShareButtons = (props) => {
           <TwitterIcon size={32} round={true} />
         </TwitterShareButton>
       </div>
+      
     </div>
   );
 }

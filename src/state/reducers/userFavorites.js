@@ -7,7 +7,6 @@ const initialState = {
   error: null
 }
 
-
 export function userFavorites(state = initialState, action) {
   switch (action.type) {
       case USER_FAVORITES_PENDING:

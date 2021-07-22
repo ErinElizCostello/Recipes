@@ -1,6 +1,7 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+
 import { useStylesSummary } from '../styles/recipePage/summary'
+import Typography from '@material-ui/core/Typography';
 
 
 const Summary = (props) => {
@@ -9,7 +10,6 @@ const Summary = (props) => {
   const summary = props.recipeInformation.summary
 
   let editedSummary = ''
-
   
   //slicing off the end part of the summary (at the part with the "spoonacular score" which is a '%') because it contains dead links that Spoonacular inserts.
   let summaryArray = summary.split('').reverse()
