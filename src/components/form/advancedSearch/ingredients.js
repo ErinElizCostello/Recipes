@@ -11,7 +11,7 @@ import ErrorMessage from '../../errorMessage'
 import { useStylesIngredientsInput } from '../../styles/form/advancedSearch/ingredientsInput'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/autocomplete';
+import { Autocomplete } from '@material-ui/lab';
 
 
 const Ingredients = () => {
