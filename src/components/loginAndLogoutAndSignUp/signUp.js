@@ -22,6 +22,7 @@ import BackButton from '../backButton';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import LocalDiningIcon from '@material-ui/icons/LocalDining';
+import FormControl from '@material-ui/core/FormControl';
 
 
 const SignUp = () => {
@@ -59,7 +60,7 @@ const SignUp = () => {
           <Grid
             container
             direction="column"
-            justify="center"
+            justifyContent="center"
             alignItems="center"
           >
 
@@ -74,64 +75,64 @@ const SignUp = () => {
             </Grid>
 
             <form noValidate autoComplete="off">
-              <Grid item>
-                <div className={classes.formUsername}>
-                  <TextField
-                    id="username"
-                    label="username"
-                    variant="outlined"
-                    onChange={e => setFormValues({ username: e.target.value })}
-                    required
-                  />
-                </div>
-                <div className={clsx(classes.formPasswordMargin, classes.formPasswordTextField)}>
-                  <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                  <OutlinedInput
-                    id="outlined-adornment-password"
-                    label="password"
-                    type={formValues.showPassword ? 'text' : 'password'}
-                    value={formValues.password}
-                    onChange={handleChangeForm('password')}
-                    endAdornment={
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          onClick={handleClickShowPassword}
-                          onMouseDown={handleMouseDownPassword}
-                          edge="end"
-                        >
-                          {formValues.showPassword ? <Visibility /> : <VisibilityOff />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                    labelWidth={70}
-                  />
-                </div>
-              </Grid>
+                <Grid item>
+                  <div className={classes.formUsername}>
+                    <TextField
+                      id="username"
+                      label="username"
+                      variant="outlined"
+                      onChange={e => setFormValues({ username: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div className={clsx(classes.formPasswordMargin, classes.formPasswordTextField)}>
+                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                    <OutlinedInput
+                      id="outlined-adornment-password"
+                      label="password"
+                      type={formValues.showPassword ? 'text' : 'password'}
+                      value={formValues.password}
+                      onChange={handleChangeForm('password')}
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                            edge="end"
+                          >
+                            {formValues.showPassword ? <Visibility /> : <VisibilityOff />}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                      labelWidth={70}
+                    />
+                  </div>
+                </Grid>
 
-              <Grid item>
-                <div className={classes.signUpButtonSpacing}>
-                  <Button
-                    className={classes.signUpButtonDesign}
-                    variant="contained"
-                    color="primary"
-                    onClick={() => signUpUser(formValues.username, formValues.password)}
-                  >
-                    Sign Up
-                </Button>
-                </div>
-              </Grid>
+                <Grid item>
+                  <div className={classes.signUpButtonSpacing}>
+                    <Button
+                      className={classes.signUpButtonDesign}
+                      variant="contained"
+                      color="primary"
+                      onClick={() => signUpUser(formValues.username, formValues.password)}
+                    >
+                      Sign Up
+                    </Button>
+                  </div>
+                </Grid>
             </form>
 
-            <Grid item>
-            <DontOrAreadyHaveAnAccountLink account="alreadyHaveAnAccount" />
-            </Grid>
+              <Grid item>
+                <DontOrAreadyHaveAnAccountLink account="alreadyHaveAnAccount" />
+              </Grid>
 
           </Grid>
         </Container>
       </div>
-    </div>
-  );
+      </div>
+      );
 }
 
-export default SignUp
+      export default SignUp

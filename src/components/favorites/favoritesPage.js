@@ -10,6 +10,7 @@ import { userFavoritesSuccess } from '../../state/actions/userFavorites'
 import Spinner from '../spinner'
 import FavoritesHeader from './favoritesHeader'
 import ErrorMessage from '../errorMessage'
+import NoFavsSavedMessage from './noFavsSavedMessage';
 
 import { useStylesFavoritesPage } from '../styles/favoritesPage/favoritesPage'
 import RecipeCard from '../recipeCard/recipeCard'
@@ -82,11 +83,7 @@ const FavoritesPage = () => {
             </div>
           </div>
           :
-          !favoriteRecipes.length && !error &&
-            <Typography className={classes.noSavedRecipes}>
-              You don't have any saved recipes
-            </Typography>
-           
+          !favoriteRecipes.length && !error && <NoFavsSavedMessage />    
       }
 
       <div className={classes.spacingBelowHeader} />

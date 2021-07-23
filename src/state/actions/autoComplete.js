@@ -1,4 +1,4 @@
-import { AUTOCOMPLETE_PENDING, AUTOCOMPLETE_SUCCESS, AUTOCOMPLETE_ERROR } from '../constants'
+import { AUTOCOMPLETE_PENDING, AUTOCOMPLETE_SUCCESS } from '../constants'
 
 
 export const autoCompletePending = () => {

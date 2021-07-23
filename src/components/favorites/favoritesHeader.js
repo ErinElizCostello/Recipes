@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
 
 import { useStylesFavoritesPage } from '../styles/favoritesPage/favoritesPage'
 import Typography from '@material-ui/core/Typography';

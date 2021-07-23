@@ -60,6 +60,7 @@ const SelectForm = (props) => {
           onChange={onSelect}
           label={label}
           className={classes.select}
+          defaultValue=""
         >
           {menuItem.map(item => <MenuItem key={Math.random()} value={item} >{item}</MenuItem>)}
         </Select>

@@ -39,6 +39,13 @@ db.query('USE recipes');
 app.use(router);
 app.use('/', router);
 
+// if(process.env.NODE_ENV === 'production') {
+//   app.use(express.static('build'))
+//   app.get('*', (req, res) => {
+//     req.sendFile(path.resolve(_dirname, 'build', 'index.html'))
+//   })
+// }
+
 const PORT = process.env.PORT || 3001
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))

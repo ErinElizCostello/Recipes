@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useStylesLoginPage } from '../styles/loginAndLogoutAndSignUp/loginPage'
 import Typography from '@material-ui/core/Typography';
 
