@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
 import { getRecipeCodesForUserFavorites } from '../../APIs/database/getRecipeCodesForUserFavorites'
@@ -42,25 +42,24 @@ const FavoritesPage = () => {
         codes.forEach(code => code !== codes.slice(-1) ? listOfRecipeCodes += code += ',' : listOfRecipeCodes += code)
       })
 
-    ///COME BACK TO THIS vvv
-
-    //  listOfRecipeCodes.length ?
-    await searchBulkRecipes(listOfRecipeCodes)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(' Your favorite recipes could not be retrieved')
-        }
-        return response.json()
-      })
-      .then(recipe => {
-        setError(null)
-        setLoading(false)
-        dispatch(userFavoritesSuccess(recipe))
-      }).catch(error => {
-        setLoading(false)
-        setError(error.message)
-      })
-    // : setLoading(false)
+    listOfRecipeCodes.length ?
+      searchBulkRecipes(listOfRecipeCodes)
+        .then(response => {
+          if (!response.ok) {
+            console.log(response)
+            throw new Error(' Your favorite recipes could not be retrieved')
+          }
+          return response.json()
+        })
+        .then(recipe => {
+          setError(null)
+          setLoading(false)
+          dispatch(userFavoritesSuccess(recipe))
+        }).catch(error => {
+          setLoading(false)
+          setError(error.message)
+        })
+      : setLoading(false)
   }
 
   useEffect(() => {
@@ -75,15 +74,6 @@ const FavoritesPage = () => {
       <FavoritesHeader loading={loading} />
       {error && <ErrorMessage error={error} />}
 
-      {/* {
-        !favoriteRecipes.length ?
-          <Typography className={classes.noSavedRecipes}>
-            You don't have any saved recipes
-          </Typography>
-          : null
-      } */}
-
-      {/* remember to add className={classes.noSavedRecipes} to no save recipes message*/}
       {
         loading ?
           <div className={classes.spinnerSpacing}>
@@ -92,11 +82,11 @@ const FavoritesPage = () => {
             </div>
           </div>
           :
-          !favoriteRecipes.length && !error ?
+          !favoriteRecipes.length && !error &&
             <Typography className={classes.noSavedRecipes}>
               You don't have any saved recipes
             </Typography>
-            : null
+           
       }
 
       <div className={classes.spacingBelowHeader} />
