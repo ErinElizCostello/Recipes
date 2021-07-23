@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import headerImage from '../../../images/header-image-ella-olsson-unsplash.jpg'
 
 export const useStylesHeaderHomePage = makeStyles(theme => ({
+
   background: {
     [theme.breakpoints.up('xs')]: {
       backgroundImage: `url(${headerImage})`, height: '100vh', backgroundPosition: 'right',
@@ -12,6 +13,7 @@ export const useStylesHeaderHomePage = makeStyles(theme => ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover'
   },
+
   navbar: {
     display: 'flex', 
     direction: 'row', 
@@ -19,6 +21,7 @@ export const useStylesHeaderHomePage = makeStyles(theme => ({
     alignItems: 'center', 
     marginRight: 20
   },
+  
   titleSpacing: {
     display: 'flex', 
     direction: 'row', 

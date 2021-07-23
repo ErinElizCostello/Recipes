@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStylesSignUpPage } from '../styles/signUpPage'
+import { useStylesSignUpPage } from '../styles/loginAndLogoutAndSignUp/signUpPage'
 import Typography from '@material-ui/core/Typography';
 
 

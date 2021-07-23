@@ -16,6 +16,7 @@ const BackButton = (props) => {
 
   const user = localStorage.getItem('User') ? JSON.parse(localStorage.getItem('User')).payload.user : undefined
 
+  // turnOffNoResults makes sure that if the user does a search that returns no results (and the 'no results' message will appear on the searchResults page), you can return to the home page, do a new search, and the 'no results' message on the searchResults page will not appear again with the new successful search.
   const turnOffNoResults = () => dispatch(recipeSearchNoResults(false))
 
   return (

@@ -11,7 +11,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 
 const NutritionDialogue = (props) => {
-
   const classes = useStylesNutritionDialogue();
 
   const nutritionInformation = props.recipeInformation.nutrition

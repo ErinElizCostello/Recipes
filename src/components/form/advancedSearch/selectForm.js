@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 
-import { useStylesSelectForm } from '../../styles/homePage/selectForm'
+import { useStylesSelectForm } from '../../styles/form/advancedSearch/selectForm'
 
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';

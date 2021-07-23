@@ -7,7 +7,7 @@ import { sliderInformationNutrition } from '../formLabels/nutritionSliders'
 
 import SliderForm from './sliderForm';
 
-import { useStylesNutritionSliderDialogue } from '../../styles/homePage/nutritionSliderDialogue'
+import { useStylesNutritionSliderDialogue } from '../../styles/form/advancedSearch/nutritionSliderDialogue'
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';

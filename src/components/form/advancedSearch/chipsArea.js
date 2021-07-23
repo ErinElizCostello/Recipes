@@ -9,7 +9,7 @@ import { deleteDiet } from '../../../state/actions/dietType'
 import { deleteMaximumReadyTime } from '../../../state/actions/maximumReadyTime'
 import { slidersDelete } from '../../../state/actions/sliderActions'
 
-import { useStylesChipsArea } from '../../styles/homePage/chipsArea'
+import { useStylesChipsArea } from '../../styles/form/advancedSearch/chipsArea'
 import Chip from '@material-ui/core/Chip';
 import Grid from '@material-ui/core/Grid';
 

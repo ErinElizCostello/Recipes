@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {useStylesNoResults} from '../styles/homePage/noResults'
+import {useStylesNoResults} from '../styles/searchResults/noResults'
 import Typography from '@material-ui/core/Typography';
 
 

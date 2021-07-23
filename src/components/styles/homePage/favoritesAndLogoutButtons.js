@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStylesFavoritesAndLogOutButtons = makeStyles({
+  
   general: {
     display: 'flex',
     direction: 'row',

@@ -1,13 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStylesLoginAndSignUpButtons = makeStyles({
+  
   general: {
     display: 'flex',
     direction: 'row',
     justifyContent: 'flex-start',
     margin: 20,
-    // background: '#5e5e5e',
-    // opacity: '.5'
   },
 
   text: {
@@ -23,7 +22,6 @@ export const useStylesLoginAndSignUpButtons = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
     color: '#5e5e5e',
-    // fontWeight: 'lighter'
   },
 
   logInLink: {

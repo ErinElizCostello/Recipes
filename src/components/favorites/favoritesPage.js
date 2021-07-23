@@ -11,7 +11,7 @@ import Spinner from '../spinner'
 import FavoritesHeader from './favoritesHeader'
 import ErrorMessage from '../errorMessage'
 
-import { useStylesFavoritesPage } from '../styles/favoritesPage'
+import { useStylesFavoritesPage } from '../styles/favoritesPage/favoritesPage'
 import RecipeCard from '../recipeCard/recipeCard'
 import BackButton from '../backButton'
 import Container from '@material-ui/core/Container';
@@ -82,6 +82,8 @@ const FavoritesPage = () => {
           </Typography>
           : null
       } */}
+
+      {/* remember to add className={classes.noSavedRecipes} to no save recipes message*/}
       {
         loading ?
           <div className={classes.spinnerSpacing}>

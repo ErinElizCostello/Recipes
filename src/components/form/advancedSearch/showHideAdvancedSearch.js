@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import AdvancedSearch from './advancedSearch';
 
-import { useStylesForm } from '../../styles/homePage/form'
+import { useStylesForm } from '../../styles/form/form'
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import AddIcon from '@material-ui/icons/Add';

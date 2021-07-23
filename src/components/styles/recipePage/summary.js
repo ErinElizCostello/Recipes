@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStylesSummary = makeStyles((theme) => ({
+  
   summary: {
     display: 'flex',
     alignItems: 'center',

@@ -9,7 +9,7 @@ import DontOrAreadyHaveAnAccountLink from './dontOrAlreadyHaveAnAccountLink'
 
 import clsx from 'clsx';
 
-import { useStylesLoginPage } from '../styles/loginPage'
+import { useStylesLoginPage } from '../styles/loginAndLogoutAndSignUp/loginPage'
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import OutlinedInput from '@material-ui/core/OutlinedInput';

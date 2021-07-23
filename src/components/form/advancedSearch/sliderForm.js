@@ -5,14 +5,14 @@ import { useDispatch } from 'react-redux'
 
 import { sliders } from '../../../state/actions/sliderActions'
 
-import { useStylesSliderForm } from '../../styles/homePage/sliderForm'
+import { useStylesSliderForm } from '../../styles/form/advancedSearch/sliderForm'
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
 
 
 const SliderForm = (props) => {
-
   const classes = useStylesSliderForm();
+
   const dispatch = useDispatch()
 
   let checkBoxLabel = props.sliderInformation.checkBoxLabel

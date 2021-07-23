@@ -5,7 +5,7 @@ import { generalSearch } from '../../state/actions/generalSearch'
 
 import SubmitButton from './submitButton'
 
-import { useStylesGeneralSearch } from '../styles/homePage/generalSearchInput'
+import { useStylesGeneralSearch } from '../styles/form/generalSearchInput'
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 

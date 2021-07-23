@@ -46,7 +46,7 @@ const AdvancedSearch = () => {
           overflow='hidden'
         >
           <div>
-            <ImageList className={classes.gridList} cols={0}>
+            <ImageList className={classes.imageList} cols={0}>
 
               {selectInformation.map(selectFormInformation =>
                 <ImageListItem key={Math.random()}>
@@ -76,7 +76,7 @@ const useStylesAdvancedSearch = makeStyles((theme) => ({
     margin: 20
   },
 
-  gridList: {
+  imageList: {
     flexWrap: 'nowrap',
     [theme.breakpoints.up('xs')]: {
       width: 325
