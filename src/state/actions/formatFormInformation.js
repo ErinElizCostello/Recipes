@@ -18,7 +18,6 @@ export const formatFormInformation = (theState) => dispatch => {
   const mealType = state.mealType
   const sliders = state.sliders;
   const maximumReadyTime = state.maximumReadyTime
-  console.log(maximumReadyTime)
 
   // Formats the form information for the Spoonacular API
   let formInformation = '';

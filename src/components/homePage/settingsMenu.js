@@ -1,8 +1,6 @@
 import React, { useState, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ADMIN_NAME } from '../../APIs/superSECRETKEYZZZ'
-
 import clsx from 'clsx';
 
 import { useStylesSettingsMenu } from '../styles/homePage/settingsMenu'
@@ -15,6 +13,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import SettingsIcon from '@material-ui/icons/Settings';
 import FaceIcon from '@material-ui/icons/Face';
+
+const ADMIN_NAME = process.env.REACT_APP_ADMIN_NAME
 
 
 const SettingsMenu = () => {
