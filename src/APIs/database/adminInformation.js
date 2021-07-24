@@ -1,4 +1,4 @@
 export const adminInformation = () => {
-  return fetch('http://localhost:3001/admin')
+  return fetch('http://https://reallyhungry.herokuapp.com/admin')
   .then(response => response.json())
 }

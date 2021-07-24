@@ -1,5 +1,5 @@
 export const signUp = (username, password) => {
-  return fetch('http://localhost:3001/signUp', {
+  return fetch('https://reallyhungry.herokuapp.com/signUp', {
     method: 'POST',
     mode: 'cors',
     body: JSON.stringify({
