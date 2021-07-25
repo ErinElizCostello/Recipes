@@ -1,5 +1,5 @@
 export const authenticateUser = (token) => {
-  return fetch(`http://https://reallyhungry.herokuapp.com/checkUser`, {
+  return fetch(`http://reallyhungry.herokuapp.com/checkUser`, {
     headers: {
       "Authorization": `bearer ${token}`
     }
