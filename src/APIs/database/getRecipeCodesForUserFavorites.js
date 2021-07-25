@@ -1,5 +1,5 @@
 export const getRecipeCodesForUserFavorites = (userID) => {
-  return fetch('https://reallyhungry.herokuapp.com/getFavorites',
+  return fetch('https://reallyhungrytwo.herokuapp.com/getFavorites',
     {
       method: 'POST',
       body: JSON.stringify({ id: userID }),
