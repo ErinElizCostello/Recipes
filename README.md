@@ -11,9 +11,7 @@
 [Spoonacular API](https://spoonacular.com/)
 
 <p align="center">
-  <img src="https://github.com/ErinElizCostello/Recipes/blob/master/src/images/hungry-website-homepage.png" />
-</p>
-
-<p align="center">
   <img src="https://github.com/ErinElizCostello/Recipes/blob/master/src/images/hungry-phone-homepage.png" />
+  <img src="https://github.com/ErinElizCostello/Recipes/blob/master/src/images/hungry-favorites-page.png" />
+  <img src="https://github.com/ErinElizCostello/Recipes/blob/master/src/images/hungry-nutrition-options.png" />
 </p>
