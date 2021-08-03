@@ -1,7 +1,3 @@
-<div align="center">
-![Hungry](https://github.com/ErinElizCostello/Recipes/blob/master/src/images/logoText.png?raw=true)
-### Search for recipes and make an account to save your favorite ones. Filter your search by ingredients, cuisine, diet-type, intolerances, nutrition and vitamins.
-</div>
 <p align="center">
   <img src="https://github.com/ErinElizCostello/Recipes/blob/master/src/images/logoText.png" />
 </p>
