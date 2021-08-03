@@ -8,17 +8,7 @@ const app = express();
 
 
 app.use(express.json())
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
-app.use(cors(
-  {
-  origin: 'http://localhost:3000',
-  methods: ["GET", "POST", "DELETE"],
-  credentials: true
-}
-));
+app.use(cors());
 
 const host = process.env.DB_HOST 
 const user = process.env.DB_USER 
@@ -35,8 +25,6 @@ require('./passport-config')(passport);
 
 app.use(express.urlencoded({ extended: true }))
 app.use(passport.initialize());
-
-db.query('USE recipes');
 
 app.use(router);
 app.use('/', router);
