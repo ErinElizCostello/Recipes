@@ -3,5 +3,6 @@
 
 ##### Created with: React.js with hooks, Redux, Material-UI, Express.js, MySQL, Passport.js, JWT, Spoonacular API
 
-http://reallyhungry.herokuapp.com - automatic!
-[Website](http://reallyhungry.herokuapp.com)
+[Hungry Website](http://reallyhungry.herokuapp.com)
+
+[Spoonacular API](https://spoonacular.com/)
