@@ -1,6 +1,3 @@
-//For searching recipes
-
-// import {SPOONACULAR_KEY} from '../superSECRETKEYZZZ'
 const SPOONACULAR_KEY = process.env.REACT_APP_SPOONACULAR_KEY
 
 export const searchRecipes = (ingredientsList) => {

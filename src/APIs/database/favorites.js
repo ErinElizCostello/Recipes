@@ -1,12 +1,9 @@
-//GET
-
 export const favoritesGET = () => {
   return fetch('https://reallyhungrytwo.herokuapp.com/favorites')
       .then(response => response.json())
 }
 
 
-//POST
 export const favoritesPOST = (userID, APIrecipeID) => {
   return fetch('https://reallyhungrytwo.herokuapp.com/favorites', {
         method: 'POST',
@@ -21,8 +18,6 @@ export const favoritesPOST = (userID, APIrecipeID) => {
         .then(response => response.json())
 }
 
-
-//DELETE
 
 export const favoritesDELETE = (APIrecipeID) => {
   return fetch(`https://reallyhungrytwo.herokuapp.com/favorites/${APIrecipeID}`, {

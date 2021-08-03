@@ -1,5 +1,3 @@
-
-
 const SPOONACULAR_KEY = process.env.REACT_APP_SPOONACULAR_KEY
 
 export const autoCompleteIngredients = (character) => {
