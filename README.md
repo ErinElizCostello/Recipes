@@ -9,3 +9,11 @@
 [Hungry Website](http://reallyhungry.herokuapp.com)
 
 [Spoonacular API](https://spoonacular.com/)
+
+<p align="center">
+  <img src="https://github.com/ErinElizCostello/Recipes/blob/master/src/images/hungry-website-homepage.png" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/ErinElizCostello/Recipes/blob/master/src/images/hungry-phone-homepage.png" />
+</p>
